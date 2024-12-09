@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - slides.qmd
+    - assignments.qmd
+    - data.qmd
+    - conversations.qmd
+    - solutions.qmd
+    - vizly.qmd
+              
+website:
+  title: ""
+  search: false  
+  navbar:
+    search: false
+    title: MGMT 675
+    file: index.qmd
+    right:
+      - text: Slides 
+        file: slides.qmd
+      - text: Datasets
+        file: data.qmd
+      - text: Conversations
+        file: conversations.qmd
+      - text: Assignments
+        file: assignments.qmd
+      - text: Solutions 
+        file: solutions.qmd   
+      - text: Vizly
+        file: vizly.qmd
+        
+format: 
+  html:
+    theme: cosmo
+    scss: styles.css
+    link-external-newwindow: true
+    
+   
+
+
+

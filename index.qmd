@@ -1,0 +1,63 @@
+
+## AI-Assisted Financial Analysis<br>Spring 2025<br><br>![](images/RiceBusiness-transparent-logo-sm.png){width=40%} 
+
+
+#### Instructor
+
+[Kerry Back](https://kerryback.com)<br> (<a href="mailto:kerryback@gmail.com">kerryback@gmail.com)</a><br>
+J. Howard Creekmore Professor of Finance and Professor of Economics
+
+#### Meeting Schedule
+
+Room 318 McNair Hall<br>
+TTh 12:30 -- 2:00<br>
+3/12/2024 -- 4/18/2024
+
+#### Course Description
+
+
+
+The format of the course is that we will successively consider different types of analyses.  We will perform each analysis live in class using Julius.AI.  Then, your assignments will be to have similar conversations with Julius.  
+
+
+
+#### Topics
+
+1.  Simulation
+2.  Data handling
+3.  Cost of capital and performance evaluation 
+4.  Visualization
+5.  Portfolio optimization
+6.  Autocorrelation and autoregression
+7.  Machine learning
+    a. Overfitting, shrinkage, and linear models
+    b. Random forests and gradient boosting (application = valuing houses)
+    c. Classification (application = predicting loan default)
+    d. Neural networks
+
+
+
+
+#### Grading
+
+Grades will be based on weekly individual homework assignments (60%) and a final exam during exam week (40%).  The final exam will be a timed at-home exam distributed through Canvas.
+
+#### Julius
+
+Julius.AI provides a 50% academic discount.  Sign up for a free account, then send an email using your Rice email account to [team@julius.ai](mailto:team@julius.ai) and ask for the academic discount.  They will respond with a promo code to use.  The Basic account allows 250 messages per month and will probably be ok.  If the message limit becomes binding, you can always switch at that time to the Essential account, which allows unlimited messages.   Everything is run in the cloud from a web browser, so there is no software to download. In particular, it is not necessary to have python installed on your computer.
+
+#### Honor Code
+
+The Rice University honor code applies to all work in this course.  Each student must do his or her own assignments, but it is allowed and in fact encouraged for students to seek advice from each other. 
+
+#### Disability Accommodations
+
+Any student with a documented disability requiring accommodations in this course is encouraged to
+contact me outside of class. All discussions will remain confidential. Any adjustments or accommodations
+regarding assignments or the final exam must be made in advance. Students with disabilities
+should also contact Disability Support Services in the Allen Center.
+
+
+
+
+
