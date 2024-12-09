@@ -3,7 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-/docs/CNAME
+docs/CNAME
+docs/.nojekyll
 
 # C extensions
 *.so
