@@ -9,9 +9,8 @@ J. Howard Creekmore Professor of Finance and Professor of Economics
 
 #### Meeting Schedule
 
-Room 318 McNair Hall<br>
 TTh 12:30 -- 2:00<br>
-3/12/2024 -- 4/18/2024
+3/18/2025 -- 4/24/2025
 
 #### Course Description
 
@@ -23,12 +22,12 @@ The platform that we will use is [Julius.ai](https://julius.ai/).  It is a wrapp
 
 What we will do in the course is to create structured prompts, saved as Julius workflows, that can be shared with others.  This is somewhat similar to creating a custom GPT.  For example, in analyzing financial statements, we can specify which financial ratios we want to compute and what type of trend analysis and visualizations we want to create, etc., and create a workflow that can be used repeatedly for different tickers.  Time in class will be alloted for students to build workflows.  We will share what we have built by sharing links using a Google Chat space.  Grades will be based on workflows created as weekly assignments and on class participation.
 
-In some cases, we will use generative AI (LLMs) only to write the python code.  We could, in such cases, export the python code to run on our own computers or elsewhere in the cloud and not need an LLM for subsequent use of the code.  We will explore how to do that in the course, though it will not be the focus of the course.  In other cases, generative AI may be an integral part of the workflow.  For example, we may use AI to summarize the MD&A section of a 10-K.  In those cases as well, we could export the python code and run it elsewhere, but we would need to add code that accesses the LLM's API to make requests (and we would need a paid account at the LLM provider to do that).  We will illustrate that in the course also (using Julius to write the code to send requests and get responses from the LLM).
+In some cases, we will use generative AI (LLMs) only to write the python code.  We could, in such cases, export the python code to run on our own computers or elsewhere in the cloud and not need an LLM for subsequent use of the code.  We will explore how to do that in the course, though it will not be the focus of the course.  In other cases, generative AI may be an integral part of the workflow.  For example, we may use AI to summarize the MD&A section of a 10-K.  In those cases as well, we could export the python code and run it elsewhere, but we would need to add code that accesses the LLM's API to make requests (and we would need a paid account at the LLM provider to do that).  We will illustrate that in the course also, using Julius to write the code to send requests and get responses from the LLM.
 
 
 #### Julius
 
-Julius.AI provides a 50% academic discount.  Sign up for a free account, then send an email using your Rice email account to [team@julius.ai](mailto:team@julius.ai) and ask for the academic discount.  They will respond with a promo code to use.  The Basic account allows 250 messages per month and will probably be ok.  If the message limit becomes binding, you can always switch at that time to the Essential account, which allows unlimited messages.   Everything is run in the cloud from a web browser, so there is no software to download. 
+Julius.AI provides a 50% academic discount.  Sign up for a free account, then send an email using your Rice email account to [team@julius.ai](mailto:team@julius.ai) and ask for the academic discount.  They will respond with a promo code to use.  The Lite account ($8 per month after discount) allows 250 messages per month and may be ok.  If the message limit becomes binding, you can always switch at that time to the Standard account ($18 per month after discount), which allows unlimited messages.   Everything is run in the cloud from a web browser, so there is no software to download. 
 
 #### Honor Code
 
