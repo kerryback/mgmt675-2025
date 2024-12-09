@@ -2,8 +2,8 @@ project:
   type: website
   output-dir: docs
   resources:
-   - CNAME
-   - ".nojekyll"
+   - docs/CNAME
+   - docs/.nojekyll
   render:
     - index.qmd
               
