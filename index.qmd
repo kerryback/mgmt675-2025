@@ -31,7 +31,7 @@ Julius.AI provides a 50% academic discount.  Sign up for a free account, then se
 
 #### Honor Code
 
-The Rice University honor code applies to all work in this course.  Each student must do his or her own assignments, but it is allowed and in fact encouraged for students to seek advice from each other. 
+The Rice University honor code applies to all work in this course.  Each student must do his or her own assignments, but students are allowed and in fact encouraged to seek advice from each other. Use of generative AI is of course permitted.
 
 #### Disability Accommodations
 
