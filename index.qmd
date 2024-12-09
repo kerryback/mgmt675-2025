@@ -29,7 +29,7 @@ In some cases, we may not need to work interactively.  For example, I built a wo
 
 #### Julius
 
-Julius.AI provides a 50% academic discount.  Sign up for a free account, then send an email using your Rice email account to [team@julius.ai](mailto:team@julius.ai) and ask for the academic discount.  They will respond with a promo code to use.  The Lite account ($8 per month after discount) allows 250 messages per month and may be ok.  If the message limit becomes binding, you can always switch at that time to the Standard account ($18 per month after discount), which allows unlimited messages.   Everything is run in the cloud from a web browser, so there is no software to download. 
+Julius.ai provides a 50% academic discount.  Sign up for a free account, then send an email using your Rice email account to [team@julius.ai](mailto:team@julius.ai) and ask for the academic discount.  They will respond with a promo code to use.  The Lite account ($8 per month after discount) allows 250 messages per month and may be ok.  If the message limit becomes binding, you can always switch at that time to the Standard account ($18 per month after discount), which allows unlimited messages.   Everything is run in the cloud from a web browser, so there is no software to download. 
 
 #### Honor Code
 
