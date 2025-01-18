@@ -31,15 +31,15 @@ In some cases, we may not need to work interactively.  For example, I built a wo
 1. Estimating betas
 2. Fama-French model and performance evaluation
 3. Retirement planning simulation
-4. Gradio apps 
-5. Portfolio optimization
-6. Backtesting optimal portfolios
-7. Financial statement analysis 
-8. Using an LLM's API
-9. Capital budgeting
-10. Option valuation and hedging
-11. Machine learning for credit risk analysis
-12. Scraping and analyzing short sell data
+4. Portfolio optimization
+5. Financial statement analysis 
+6. Sentiment analysis
+7. Capital budgeting
+8. Capital budgeting
+9. Using an LLM's API
+10. Web scraping
+11. Option analysis
+12. Machine learning for credit risk analysis
 
 
 
