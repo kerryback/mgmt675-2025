@@ -26,25 +26,34 @@ A great feature of working with Julius is that it is interactive.  After running
 
 In some cases, we may not need to work interactively.  For example, I built a workflow to scrape the SEC EDGAR site that only requires the user to provide a ticker ([SEC EDGAR 10-Q Scraper](https://julius.ai/workflows/preview/02bcd09a-81be-4531-9cd5-58fc5296630d)).  In such cases, we could export the python code to run on our own computers.  If generative AI is an integral part of the workflow (e.g., if we are using AI to summarize the MD&A section of a 10-K), then  we would need to add code that accesses the LLM's API to make requests.  We can also use Julius to write the code to do that.  
 
-#### Tentative Schedule of Topics by Day
+#### Tentative Schedule 
 
-1. Estimating betas
-2. Fama-French model and performance evaluation
-3. Retirement planning simulation
-4. Portfolio optimization
-5. Financial statement analysis 
-6. Sentiment analysis
-7. Capital budgeting
-8. Capital budgeting
-9. Using an LLM's API
-10. Web scraping
-11. Option analysis
-12. Machine learning for credit risk analysis
+Assignments are due on Wednesdays by 11:59 p.m.  Late assignments will not be accepted unless there is a significant and documented medical event.  Most assignments require submitting a link to a Julius workflow.  The only exception is Assignment 3, which is a capital budgeting case assignment.  You should be able to do Assignment 3 based on what you learned in the core finance course and Applied Finance.  The purpose of Assignemnt 3 in this course is to provide a foundation for studying AI-assisted capital budgeting the following week.  
+
+| Date | Activity |
+| --- | --- |
+| Mar 17| Estimating betas|
+| Mar 19| 1st assignment due: estimating betas, Julius workflow|
+| | Fama-French model and performance evaluation|
+| Mar 24 | Retirement planning simulation|
+| Mar 26 |2nd assignment due: performance evaluation, Julius workflow|
+| | Portfolio optimization|
+| Mar 31 |  Financial statement analysis |
+| Apr 2 | 3rd assignment due: Sneaker Project, Excel upload|
+| |  Sentiment analysis|
+| Apr 7 |  Capital budgeting|
+| Apr 9 | 4th assignment due: financial statement analysis, Julius workflow|
+| | Capital budgeting|
+|  Apr 14 | Web scraping |
+|  Apr 16 | 5th assignment due: capital budgeting, Julius workflow|
+| | Option analysis |
+|  Apr 21 | Intro to machine learning|
+|  Apr 23 | 6th assignment due: option analysis, Julius workflow|
+| | Machine learning for credit risk analysis|
 
 
 
-
-#### Julius
+#### Signing up for Julius
 
 Julius.ai provides a 50% academic discount.  Sign up for a free account, then send an email using your Rice email account to [team@julius.ai](mailto:team@julius.ai) and ask for the academic discount.  They will respond with a promo code to use.  The Lite account ($8 per month after discount) allows 250 messages per month and may be ok.  It is unlikely that will be enough, but you could try it. If the message limit becomes binding, you can switch to the Standard account ($18 per month after discount), which allows unlimited messages.   Everything is run in the cloud from a web browser, so there is no software to download. 
 
