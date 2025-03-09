@@ -1,0 +1,99 @@
+---
+title: MGMT 675<br><br><br><br>AI-Assisted Financial Analysis<br><img src="RiceBusiness-transparent-logo-sm.png"  height=100>
+title-slide-attributes:
+  data-background-image: https://www.dropbox.com/scl/fi/jerhfe2cad1jtdvapik71/gpt_image.jpg?rlkey=2dnc3qyozkm24tcl2pzjccxka&dl=1
+  data-background-position: top
+  data-background-opacity: "0.4"
+include-in-header:
+  - text: |
+      <style>
+      #title-slide .title {
+        color: #00205B;
+      }
+      </style>
+execute:
+  echo: false
+  jupyter: python3
+  cache: true
+format: 
+  revealjs:
+    highlight-style: monokai
+    code-fold: true
+    code-copy: hover
+    scrollable: true
+    slide-number: true
+    preview-links: true
+    self-contained: true
+    controls: true
+    transition: fade
+    theme: 722.scss
+    incremental: false
+    code-line-numbers: false
+---
+
+   
+## Meet your Prof
+
+- At Rice since 2009, in Jones and in Econ Dept.
+  - teach core finance, quantitative investments, investments theory, and python for business research 
+  - to PhD and Masters in Data Science students
+- Previously at Northwestern, Indiana, Washington Univ. in St. Louis, and Texas A&M.  Associate Dean at Wash U.
+- Former and current editor and associate editor of several journals. Two textbooks (derivatives and PhD asset pricing theory).  Materials and info at [kerryback.com](https://kerryback.com)
+
+## Motivation for this course
+
+- [How will AI affect finance jobs?](https://www.cio.com/article/2089550/ai-poised-to-replace-entry-level-positions-at-large-financial-institutions.html)
+
+- How does this work?  (basic template)
+  - Python code for financial analysis
+  - Create app that encapsulates python code 
+  - App makes API calls to LLMs to process user's (natural language) input and pass structured version to python code
+
+- Random web cites: 40+% of all new code written by AI, 80+% of developers use AI assistance
+
+## Learning objectives
+
+  - Learn to use AI to write python code to perform financial analyses
+  - Get additional practice in financial analyses
+  - Obtain a basic understanding of
+    - Python
+    - Making API calls to LLMs
+    - Building simple apps
+ 
+## Platforms 
+
+  - Julius.ai to write and execute python code 
+  - Google Colab as alternative python environment (free)
+  - VS Code and Cursor as alternative local environments
+  - Streamlit Cloud for hosting apps (free)
+  - OpenAI for API calls
+  - HuggingFace as alternative for API calls
+  
+## Platforms 
+
+  - **Julius.ai to write and execute python code** 
+  - Google Colab as alternative python environment (free)
+  - VS Code and Cursor as alternative local environments
+  - Streamlit Cloud for hosting apps (free)
+  - OpenAI for API calls
+  - HuggingFace as alternative for API calls
+
+## Deliverables
+
+- 4 individual assignments
+- 1 group assignment (last week of class)
+- Each assignment is to provide a link to a Julius workflow that will accomplish a specific financial analysis 
+- Assignments due by midnight on Wednesdays beginning next week
+
+## Get a Julius account
+
+- Julius.ai provides a 50% academic discount.  Sign up for a free account, then send an email using your Rice email account to team@julius.ai and ask for the academic discount.  They will respond with a promo code to use.  
+- The Lite account ($8 per month after discount) allows 250 messages per month and may be ok.  
+- Standard account ($18 per month after discount) allows unlimited messages. 
+
+## Warm-Up
+
+- Ask Julius to plot the payoff diagram of a call option with a strike of 100.
+- Ask Julius to use pandas datareader to get the 10-year Treasury yield from FRED, plot it, and save as a jpeg.
+- Ask Julius to use yfinance 2.5.4 to get AAPL's closing price from Yahoo Finance, plot it, and save as a jpeg.
+- Ask Julius what data it needs to compute the Black-Scholes value of a call option.  Supply the data and ask for the value.

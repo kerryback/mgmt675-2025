@@ -60,7 +60,7 @@ Grades will be based on four individual weekly assignments, class participation,
 |  Wed, Apr 16 | Assignment 4 due: capital budgeting|
 | Thur, Apr 17 | Sneaker case |
 |  Tue, Apr 22 | Intro to machine learning|
-| Wed, Apr 23| Group project due: capital budgeting
+| Wed, Apr 23| Group project due: pro formas and valuation
 |  Thur, Apr 24 | Machine learning for credit risk analysis|
 
 

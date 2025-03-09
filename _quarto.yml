@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render: 
     - index.qmd
+    - slides.qmd
               
 website:
   title: ""
@@ -11,6 +12,9 @@ website:
     search: false
     title: MGMT 675
     file: index.qmd
+    right:
+      - text: Slides 
+        file: slides.qmd
  
 format: 
   html:
