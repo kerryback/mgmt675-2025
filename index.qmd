@@ -19,6 +19,15 @@ McNair 214<br>
 TTh 12:30 -- 2:00<br>
 3/18/2025 -- 4/24/2025
 
+#### Learning Objectives
+
+- Learn to use AI to write python code to perform financial analyses
+- Get additional practice in financial analyses
+- Obtain a basic understanding of
+   - Python
+   - Making API calls to LLMs
+   - Building simple apps
+
 #### Course Description
 
 
@@ -36,33 +45,8 @@ This is a project-based course. We will create Julius workflows to compute the c
 
 #### Assignments and Grading
 
-Grades will be based on four individual weekly assignments, class participation, and a group project.  Assignments are due on Wednesdays by 11:59 p.m.  Late assignments will not be accepted unless there is a significant and documented medical event.  All assignments and the group project require submitting a link to a Julius workflow.  
+Grades will be based on six group assignments and class participation.  Assignments are due on Thursdays by 11:59 p.m.  Each assignment requires submitting a link to a Julius workflow.  
  
-
-#### Course Schedule 
-
- 
-
-| Date | Activity |
-| --- | --- |
-| Tue, Mar 18| Portfolio optimization|
-|Thur, Mar 20|  Simulation|
-| Tue, Mar 25 | Cost of equity capital|
-| Wed, Mar 26| Assignment 1 due: portfolio optimization|
-| Thur, Mar 27 | Fama-French model and performance evaluation|
-| Tue, Apr 1 |  Financial statement analysis |
-| Wed, Apr 2 | Assignment 2 due: performance evaluation|
-| Thur, Apr 3|  Financial statement analysis|
-| Tue, Apr 8 |  Capital budgeting|
-| Wed, Apr 9 | Assignment 3 due: financial statement analysis|
-| Thur, Apr 10 | Capital budgeting|
-|  Tue, Apr 15 | Valuation |
-|  Wed, Apr 16 | Assignment 4 due: capital budgeting|
-| Thur, Apr 17 | Sneaker case |
-|  Tue, Apr 22 | Intro to machine learning|
-| Wed, Apr 23| Group project due: pro formas and valuation
-|  Thur, Apr 24 | Machine learning for credit risk analysis|
-
 
 #### Signing up for Julius
 

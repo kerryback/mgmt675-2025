@@ -1,4 +1,0 @@
-## Slide Decks
-
-- [Course Intro](day1.html){target="_blank"} [(pdf)](pdfs/day1.pdf){target="_blank"} <br>
-

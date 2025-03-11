@@ -1,0 +1,70 @@
+---
+title:  "Mean-Variance Optimization"
+author: <br><br><br><br><span style="font-family:perpetua; font-variant:small-caps; color:#606060;">MGMT 675</span><br><br><img src="RiceBusiness-transparent-logo-sm.png"  height=80>
+execute:
+  echo: false
+  jupyter: python3
+  cache: true
+format: 
+  revealjs:
+    highlight-style: monokai
+    code-fold: true
+    code-copy: hover
+    scrollable: true
+    slide-number: true
+    preview-links: true
+    self-contained: true
+    controls: true
+    transition: fade
+    theme: 722.scss
+    incremental: false
+    code-line-numbers: false
+---
+
+## Overview
+
+- The python code that AI will generate to find the tangency portfolio will probably use a different method than you've seen before.
+- We'll do a quick overview of the method.
+   
+## Finding efficient portfolios
+
+The following are equivalent methods:
+
+1. Maximize Sharpe ratio = risk premium / risk
+2. Maximize expected return subject to not exceeding a risk limit
+3. Minimize risk subject to achieving a target expected return
+4. Maximize expected return - penalty parameter times variance
+
+## Calculus review
+
+- Suppose $y = x^2 - 2x + 5$ and you want to find the value of $x$ that minimizes $y$.
+- The minimum occurs at the bottom of the curve, where the slope is zero.
+  - The slope is the derivative, and the derivative is $d y/d x = 2x - 2$.
+  - So, the slope is zero when $2x-2=0$, which implies $x=1$.
+- Bottom line: can solve an equation to find the minimum.
+
+## Equations that solve mean-variance problems
+
+Three asset example: $w_i=$ weight, $\bar r_i=$ expected return, $r_f=$ risk-free rate, $\sigma_i^2=$ variance, $\sigma_{ik} =$ covariance.
+
+$$\sigma_1^2 w_1 + \sigma_{12} w_2 + \sigma_{13}w_3 = \bar r_1 - r_f$$
+$$\sigma_{12} w_1 + \sigma_x^2 w_2 + \sigma_{13}w_3 = \bar r_2 - r_f$$
+$$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
+
+## Tangency and other portfolios
+
+- Given solution $(w_1, w_2, w_3)$ of the equations, divide by sum of $w_i$ to get tangency portfolio
+- Given tangency portfolio,
+  - use same formula as in Applied Finance to find minimum risk portfolio achieving target expected return
+  - analogous formula to find maximum expected return portfolio satisfying a risk limit
+
+
+## Matrix multiplication
+
+This is not essential, but it will help to understand code.
+
+- Three equations are represented as 
+$$\Sigma w = \bar r - r_f$$
+where $\Sigma = 3 \times 3$ array of covariances and variances, $w=(w_1, w_2, w_3)$ and $\bar r - r_f = (\bar r_1-r_f, \bar r_2 - r_f, \bar r_3 - r_f)$
+- Solution is represented as 
+$$w = \Sigma^{-1}(\bar r - r_f)$$

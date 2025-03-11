@@ -1,0 +1,127 @@
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Mean-Variance Optimization}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+\begin{frame}{Objective}
+\begin{itemize}
+\item The python code that AI will generate to find the tangency portfolio will probably use a different method than you've seen before.
+\item We'll do a quick overview of the method.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Finding efficient portfolios}
+The following are equivalent methods:
+\begin{enumerate}
+\item Maximize Sharpe ratio = risk premium / risk
+\item Maximize expected return subject to not exceeding a risk limit 
+\item Minimize risk subject to achieving a target expected return
+\item Maximize expected return - penalty parameter times variance
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Calculus review}
+\begin{itemize}
+\item Suppose $y = x^2 - 2x + 5$ and you want to find the value of $x$ that minimizes $y$.
+\item The minimum occurs at the bottom of the curve, where the slope is zero.
+  \begin{itemize}
+  \item The slope is the derivative, and the derivative is $d y/d x = 2x - 2$.
+  \item So, the slope is zero when $2x-2=0$, which implies $x=1$.
+  \end{itemize}
+\item Bottom line: can solve an equation to find the minimum.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Equations that solve mean-variance problems}
+\begin{itemize}
+\item $w_i=$ weight, $\bar r_i=$ expected return, $r_f=$ risk-free rate, $\sigma_i^2=$ variance, $\sigma_{ik} =$ covariance.
+\item 3 asset example: 3 equations in 3 unknowns $w_1, w_2, w_3$
+\end{itemize}
+
+$$\sigma_1^2 w_1 + \sigma_{12} w_2 + \sigma_{13}w_3 = \bar r_1 - r_f$$
+$$\sigma_{12} w_1 + \sigma_x^2 w_2 + \sigma_{13}w_3 = \bar r_2 - r_f$$
+$$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
+\end{frame}
+
+\begin{frame}{Tangency and other portfolios}
+\begin{itemize}
+\item Given solution $(w_1, w_2, w_3)$ of the equations, divide by sum of $w_i$ to get tangency portfolio
+\item Given tangency portfolio,
+  \begin{itemize}
+  \item use same formula as in Applied Finance to find minimum risk portfolio achieving target expected return
+  \item analogous formula to find maximum expected return portfolio satisfying a risk limit
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Matrix multiplication}
+This is not essential, but it will help to understand code.
+\begin{itemize}
+\item Three equations are represented as 
+$$\Sigma w = \bar r - r_f$$
+where $\Sigma = 3 \times 3$ array of covariances and variances, $w=(w_1, w_2, w_3)$ and $\bar r - r_f = (\bar r_1-r_f, \bar r_2 - r_f, \bar r_3 - r_f)$
+\item Solution is represented as 
+$$w = \Sigma^{-1}(\bar r - r_f)$$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Excel Spreadsheet Examples}
+
+Based on Topic5.1\_SharpeRatioExamples\_Revised.xlsx
+
+\end{frame}
+\end{document}

@@ -1,0 +1,15 @@
+| Date | Topics | Slides etc | Assignment Due |
+|------|---------|------------|--------------|
+| Tue, Mar 18 | Portfolio optimization | [Course intro](day1-intro.pdf) <br>[Portfolio optimization](day1-meanvariance.pdf)<br>[Excel Sharpe Ratio Example](Topic5.1_SharpeRatioExamples_Revised.xlsx)| |
+| Thur, Mar 20 | Simulation | | 1. Portfolio optimization|
+| Tue, Mar 25 | Cost of equity capital | | |
+| Thur, Mar 27 | Fama-French model| | 2. Simulation|
+| Tue, Apr 1 | Attribution analysis | | |
+| Thur, Apr 3 | Financial ratios | | 3. Attribution analysis|
+| Tue, Apr 8 | Capital budgeting | | |
+| Thur, Apr 10 | Capital budgeting | | 4. Financial ratios|
+| Tue, Apr 15 | Valuation | | | 
+| Thur, Apr 17 | Options | | 5. Capital budgeting|
+| Tue, Apr 22 | Intro to machine learning| | |
+| Thur, Apr 24 | Applications of Machine Learning| | 6. Valuation|
+
