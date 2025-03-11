@@ -4,6 +4,7 @@ project:
   render: 
     - index.qmd
     - schedule.qmd
+    - videos.qmd
               
 website:
   title: ""
@@ -13,8 +14,12 @@ website:
     title: MGMT 675
     file: index.qmd
     right:
+      - text: Syllabus
+        file: index.qmd
       - text: Schedule 
         file: schedule.qmd
+      - text: Videos
+        file: videos.qmd
  
 format: 
   html:

@@ -1,0 +1,20 @@
+1. Jupyter notebooks and Google Colab
+2. Python basics
+    1. Data types, variables, and operators
+    2. Functions
+    3. Classes, objects and methods
+    4. Lists, dictionaries, etc.
+    5. Flow control
+3. Python libraries
+    1. Numpy
+    2. Pandas
+    3. Matplotlib, seaborn, and plotly
+    4. Statsmodels, scipy, and scikit-learn
+4. APIs
+    1. OpenAI
+    2. HuggingFace
+5. Local installation
+    1. Python
+    2. JupyterLab
+    3. VS Code and Cursor
+6. Streamlit
