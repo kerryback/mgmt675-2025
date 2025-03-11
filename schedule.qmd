@@ -1,6 +1,6 @@
 | Date | Topics | Slides etc | Assignment Due |
 |------|---------|------------|--------------|
-| Tue, Mar 18 | Portfolio optimization | [Course intro](day1-intro.pdf) <br>[Portfolio optimization](day1-meanvariance.pdf)<br>[Excel Sharpe Ratio Example](Topic5.1_SharpeRatioExamples_Revised.xlsx)| |
+| Tue, Mar 18 | Portfolio optimization | [Course intro](day1-intro.pdf){target="_blank"} <br>[Portfolio optimization](day1-meanvariance.pdf){target="_blank"}<br>[Excel Sharpe Ratio Example](Topic5.1_SharpeRatioExamples_Revised.xlsx){target="_blank"}| |
 | Thur, Mar 20 | Simulation | | 1. Portfolio optimization|
 | Tue, Mar 25 | Cost of equity capital | | |
 | Thur, Mar 27 | Fama-French model| | 2. Simulation|
@@ -11,5 +11,6 @@
 | Tue, Apr 15 | Valuation | | | 
 | Thur, Apr 17 | Options | | 5. Capital budgeting|
 | Tue, Apr 22 | Intro to machine learning| | |
-| Thur, Apr 24 | Applications of Machine Learning| | 6. Valuation|
+| Thur, Apr 24 | Applications of machine learning| | 6. Valuation|
 
+Each assignment is a group assignment.  The details are on Canvas.  Upload a link to a Julius workflow for each assignment.

@@ -28,7 +28,7 @@
 
 \newcommand{\eqdef}{\;\buildrel \text{d{}ef}\over = \;}
 
-\setbeamertemplate{frame footer}{Chapter 1, BUSI 521/ECON 505}
+\setbeamertemplate{frame footer}{MGMT 675, Rice University}
 
 
 \setbeamertemplate{title page}{
@@ -141,6 +141,7 @@
 \end{frame}
 
 \begin{frame}{Warm-Up}
+  Click "+ New" to start a chat with Julius.  Ask it to do the following (you could start a new chat for each topic):
 \begin{itemize}
 \item Ask Julius to plot the payoff diagram of a call option with a strike of 100.
 \item Ask Julius to use pandas datareader to get the 10-year Treasury yield from FRED, plot it, and save as a jpeg.
@@ -148,4 +149,24 @@
 \item Ask Julius what data it needs to compute the Black-Scholes value of a call option. Supply the data and ask for the value.
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Julius Workflows}
+  \begin{itemize}
+  \item Scroll down the "Workspace" menu to find and select "Workflows." 
+  \item Move to the "Sandbox" tab and select "New Sandbox."
+  \item The "Prompt" menu on the right includes a "User Prompt" option and a "Prompt" (tell Julius to run an analysis) option.
+  \item Each workflow should start with a user prompt, asking the user to supply data and maybe asking the user what output the user wants.
+  \item Specify in a Julius prompt the steps Julius should take with the information provided by the user.  
+  \item Follow up with another user prompt if needed, etc.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Example Workflow}
+  Create a workflow including the following:
+  \begin{itemize}
+  \item User prompt: Ask the user for a ticker and a start date.
+  \item Julius prompt: Use yfinance to get the closing price of the stock from Yahoo Finance beginning at the start date.  Output the result to a jpeg file and show it to the user.
+  \end{itemize}
+\end{frame}
+
 \end{document}

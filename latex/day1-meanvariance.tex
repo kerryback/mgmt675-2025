@@ -97,31 +97,38 @@ $$\sigma_{12} w_1 + \sigma_x^2 w_2 + \sigma_{13}w_3 = \bar r_2 - r_f$$
 $$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
 \end{frame}
 
+\begin{frame}{Matrix multiplication}
+    This is not essential, but it will help to understand code.
+    \begin{itemize}
+    \item Three equations are represented as 
+    $$\Sigma w = \bar r - r_f$$
+    where $\Sigma = 3 \times 3$ array of covariances and variances, $w=(w_1, w_2, w_3)$ and $\bar r - r_f = (\bar r_1-r_f, \bar r_2 - r_f, \bar r_3 - r_f)$
+    \item Solution is represented as 
+    $$w = \Sigma^{-1}(\bar r - r_f)$$
+    \end{itemize}
+    \end{frame}
+
 \begin{frame}{Tangency and other portfolios}
 \begin{itemize}
 \item Given solution $(w_1, w_2, w_3)$ of the equations, divide by sum of $w_i$ to get tangency portfolio
 \item Given tangency portfolio,
-  \begin{itemize}
-  \item use same formula as in Applied Finance to find minimum risk portfolio achieving target expected return
-  \item analogous formula to find maximum expected return portfolio satisfying a risk limit
-  \end{itemize}
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Matrix multiplication}
-This is not essential, but it will help to understand code.
 \begin{itemize}
-\item Three equations are represented as 
-$$\Sigma w = \bar r - r_f$$
-where $\Sigma = 3 \times 3$ array of covariances and variances, $w=(w_1, w_2, w_3)$ and $\bar r - r_f = (\bar r_1-r_f, \bar r_2 - r_f, \bar r_3 - r_f)$
-\item Solution is represented as 
-$$w = \Sigma^{-1}(\bar r - r_f)$$
+    \item Given risk limit (standard deviation), optimal portfolio satisfying the risk limit is
+    $$\frac{\text{risk limit}}{\text{std dev of tangency portfolio}} \times \text{tangency portfolio}.$$
+    \item Given target expected return, optimal portfolio achieving the target is
+    $$\frac{\text{target risk premium}}{\text{risk prem of tangency portfolio}} \times \text{tangency portfolio}$$
+    \end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Excel Spreadsheet Examples}
 
-Based on Topic5.1\_SharpeRatioExamples\_Revised.xlsx
+\begin{frame}{Excel Spreadsheet Example}
 
+Excel Sharpe Ratio Example (linked on Schedule page)
+
+based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
 \end{frame}
+
+
+
 \end{document}
