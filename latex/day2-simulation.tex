@@ -48,7 +48,7 @@
   \end{centering}
 }
 
-\title{Simulation}
+\title{Simulation and Forecasting}
 \subtitle{MGMT 675: AI-Assisted Financial Analysis}
 \titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
 \date{}
@@ -61,9 +61,10 @@
 \begin{frame}{Outline}
 \begin{itemize}
 \item Setting up a simulation in Julius/python
-\item Feeding an Excel model to Julius
-\item Sprigg Lane example
-\item Assignment is retirement planning
+\item Random walks
+\item Mean reversion
+\item Estimating parameters from historical data
+\item Forecasting the crude oil price
 \end{itemize}
 \end{frame}
 
@@ -72,14 +73,7 @@
 \item Model calculates outputs given inputs
 \item Ask Julius to create a function that calculates outputs given inputs
 \item Ask Julius to run a given number of simulations drawing inputs from given distributions
-\item Ask Julius to describe the distributions of the outputs
-\begin{itemize}
-\item Histogram
-\item Mean
-\item Median
-\item Standard deviation
-\item 90\% confidence interval, etc.
-\end{itemize}
+\item Ask Julius to describe the distributions of the outputs: histogram, mean, median, standard deviation, 90\% confidence interval, etc.
 \end{itemize}
 \end{frame}
 
@@ -89,14 +83,54 @@
 \item \pause Treat array of investment returns as an input
 \item \pause To simulate, ask Julius to create the array in each simulation as an array of independent random variables drawn from some distribution.
 \end{itemize}
-
-\begin{frame}{Feeding an Excel model to Julius}
+\end{frame}
+\begin{frame}{Random walks}
 \begin{itemize}
-\item We can upload an Excel file to Julius
-\item Julius' default mode is to assume each worksheet is a single table.  It will create a "dataframe" for each worksheet containing the numbers in the worksheet.
-\item Usually, we have multiple things in a single worksheet - inputs and outputs.
-\item Ask Julius to read the formulas and warn Julius that there are multiple tables.
+\item A random walk is a variable for which the \alert{changes} or \alert{percent changes} are independent random variables.
+\item Example
+\begin{itemize}
+\item Model stock returns as independent random variables
+\item Implies stock price is a random walk
+\end{itemize}
+\item Interest rates are very close to random walks.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mean reversion}
+\begin{itemize}
+\item A variable is mean reverting if changes are usually partially reversed by subsequent changes.
+\item "What goes up must come down" 
+\item Interest rates don't get infinitely large.  Positive changes tend to be somewhat reversed by subsequent negative changes.
+\item Commodity prices (crude oil, etc.) tend to be mean reverting.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A simple mean-reverting variable}
+\begin{itemize}
+\item Simple example of mean reverting variable is
+$$x_{t+1} = a + b x_t + \epsilon_{t+1}$$
+where $\epsilon$'s are iid with mean 0.
+\item $E[x_{t+1} \mid x_t] = a + b x_t$.
+\item $E[\Delta x_{t+1} \mid x_t] = a + (b-1) x_t$.
+\item Assume $b<1$.  Then,
+\begin{itemize}
+\item $E[\Delta x_{t+1} \mid x_t] > 0 \;\Leftrightarrow\; x_t < a/(1-b)$.
+\item $E[\Delta x_{t+1} \mid x_t] < 0 \;\Leftrightarrow\; x_t > a/(1-b)$.
+\item $a/(1-b)$ is the long-run mean of $x$.
+\end{itemize}
 \end{itemize}
 \end{frame}
 
 
+\begin{frame}{Example}
+\begin{itemize}
+\item Ask Julius to get monthly crude oil prices from FRED for the longest possible history using pandas data reader.
+\item Ask Julius to regress the crude oil price on the lagged price.
+\item Ask Julius to compute intercept / (1 - slope coefficient).
+\item Ask Julius to plot the crude oil prices and include a horizontal line at intercept / (1 - slope coefficient).
+\item Ask Julius to simulate from the model assuming normally distributed residuals and plot the distribution of the crude oil price 24 months from today.
+\item Warning: Julius may talk about AR(1) models and change the notation.
+\end{itemize}
+\end{frame}
+
+\end{document}
