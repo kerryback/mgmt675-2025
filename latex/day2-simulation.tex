@@ -1,0 +1,102 @@
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Simulation}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Setting up a simulation in Julius/python
+\item Feeding an Excel model to Julius
+\item Sprigg Lane example
+\item Assignment is retirement planning
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Setting up a simulation in Julius/python}
+\begin{itemize}
+\item Model calculates outputs given inputs
+\item Ask Julius to create a function that calculates outputs given inputs
+\item Ask Julius to run a given number of simulations drawing inputs from given distributions
+\item Ask Julius to describe the distributions of the outputs
+\begin{itemize}
+\item Histogram
+\item Mean
+\item Median
+\item Standard deviation
+\item 90\% confidence interval, etc.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Retirement planning}
+\begin{itemize}
+\item Inputs:
+\item \pause Treat array of investment returns as an input
+\item \pause To simulate, ask Julius to create the array in each simulation as an array of independent random variables drawn from some distribution.
+\end{itemize}
+
+\begin{frame}{Feeding an Excel model to Julius}
+\begin{itemize}
+\item We can upload an Excel file to Julius
+\item Julius' default mode is to assume each worksheet is a single table.  It will create a "dataframe" for each worksheet containing the numbers in the worksheet.
+\item Usually, we have multiple things in a single worksheet - inputs and outputs.
+\item Ask Julius to read the formulas and warn Julius that there are multiple tables.
+\end{itemize}
+\end{frame}
+
+

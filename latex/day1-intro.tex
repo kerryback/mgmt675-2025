@@ -73,6 +73,8 @@
 \end{itemize}
 \end{frame}
 
+\section{Course Overview}
+
 \begin{frame}{Motivation for this course}
 \begin{itemize}
 \item \href{https://www.cio.com/article/2089550/ai-poised-to-replace-entry-level-positions-at-large-financial-institutions.html}{How will AI affect finance jobs?}
@@ -133,6 +135,7 @@
 \end{itemize}
 \end{frame}
 
+\section{Julius}
 \begin{frame}{Get a Julius account}
 \begin{itemize}
 \item Julius.ai provides a 50\% academic discount. Sign up for a free account, then send an email using your Rice email account to team@julius.ai and ask for the academic discount. They will respond with a promo code to use.
@@ -142,11 +145,11 @@
 \end{frame}
 
 \begin{frame}{Warm-Up}
-  Click "+ New" to start a chat with Julius.  Ask it to do the following (you could start a new chat for each topic):
+  Click "+ New" to start a chat (thread)with Julius.  Ask it to do the following (you could start a new chat for each topic):
 \begin{itemize}
-\item Ask Julius to plot the payoff diagram of a call option with a strike of 100.
+\item Ask Julius to use yfinance 0.2.54 to get AAPL's closing price from Yahoo Finance, plot it, and save as a jpeg.
 \item Ask Julius to use pandas datareader to get the 10-year Treasury yield from FRED, plot it, and save as a jpeg.
-\item Ask Julius to use yfinance 2.5.4 to get AAPL's closing price from Yahoo Finance, plot it, and save as a jpeg.
+\item Ask Julius to plot the payoff diagram of a call option with a strike of 100.
 \item Ask Julius what data it needs to compute the Black-Scholes value of a call option. Supply the data and ask for the value.
 \end{itemize}
 \end{frame}
@@ -168,6 +171,42 @@
   \item User prompt: Ask the user for a ticker and a start date.
   \item Julius prompt: Use yfinance to get the closing price of the stock from Yahoo Finance beginning at the start date.  Plot the price.  Output the plot to a jpeg file and show it to the user.
   \end{itemize}
+\end{frame}
+
+\section{Excel, Python, and AI}
+
+\begin{frame}{Excel and Python}
+\begin{itemize}
+\item Data in Excel $\rightarrow$ python is easy
+\item Python output $\rightarrow$ Excel is easy
+\item Formulas in Excel $\rightarrow$ python is possible via AI
+\item Python formulas $\rightarrow$ Excel is possible via Python in Excel
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Excel $\rightarrow$ Python via AI}
+\begin{itemize}
+\item Default is to assume each worksheet is a single table and read the numbers (not the formulas) into a dataframe.
+\item Can ask Julius to read the formulas.
+\item Can also warn Julius that there are multiple tables in a worksheet if that is the case.
+\item Python implements formulas as functions.   Can ask Julius to read formulas and convert to functions.  For example, a function can compute a row of a cash flow table from other rows.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Building models in python with AI}
+\begin{itemize}
+\item Read and mimic Excel model, or
+\item Ask AI to build a model from scratch
+\item Both are often iterative processes.  Need to correct AI mistakes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Saving and reusing models}
+\begin{itemize}
+\item As Julius workflow: Copy working code and paste it into a "Prompt" cell when creating a workflow.  Ask Julius to use the code (works somewhat).
+\item Copy code and paste into a Jupyter notebook on your hard drive or Google Drive (for Colab).
+\item Create a chatbot app that runs the code.
+\end{itemize}
 \end{frame}
 
 \end{document}
