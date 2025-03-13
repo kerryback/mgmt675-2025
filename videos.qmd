@@ -1,15 +1,24 @@
-1. [Jupyter notebooks and Google Colab](https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1)
-2. Python basics
+::: {.border}
+
+{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
+    title='Jupyter Notebooks and Google Colab' 
+>}}
+
+Title here
+
+:::
+
+1. Python basics
     1. Data types, variables, and operators
     2. Functions
     3. Classes, objects and methods
     4. Lists, dictionaries, etc.
     5. Flow control
-3. Python libraries
+2. Python libraries
     1. Numpy
     2. Pandas
     3. Matplotlib, seaborn, and plotly
     4. Statsmodels, scipy, and scikit-learn
-4. APIs
-5. Local installation
-6. Streamlit
+3. APIs
+4. Local installation
+5. Streamlit
