@@ -1,4 +1,4 @@
-1. Jupyter notebooks and Google Colab
+1. [Jupyter notebooks and Google Colab](videos/test.mp4)
 2. Python basics
     1. Data types, variables, and operators
     2. Functions
