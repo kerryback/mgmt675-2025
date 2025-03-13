@@ -17,7 +17,7 @@ Passcode: %=v1=YrK
     title='Google Colab and Python Basics' 
 >}}
 
-Google Colab and Python Basics
+Data Analysis with Pandas
 
 :::
 
