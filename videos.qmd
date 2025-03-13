@@ -1,20 +1,23 @@
+
+
 ::: {.border}
 
-{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
+{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/video1.mp4?rlkey=yt1ifx6oy9unf7mrim28bqk1u&dl=1 
     title='Google Colab and Python Basics' 
 >}}
 
-Google Colab and Python Basics
+**Google Colab and Python Basics**
 
 :::
 
 ::: {.border}
 
-{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
-    title='Data Analysis with Pandas' 
+{{< video https://jgsb.zoom.us/rec/share/NMIRxSKmS6ydodbXaB6esbcDclijBiLVKdcGeJfnNBI0rX4KHX1o44dAZdgsYnct.cYyajHRtfB4vEFl_?startTime=1741901609000
+Passcode: %=v1=YrK 
+    title='Google Colab and Python Basics' 
 >}}
 
-Data Analysis with Pandas
+Google Colab and Python Basics
 
 :::
 
@@ -40,7 +43,7 @@ Using APIs of LLMs
 
 ::: {.border}
 
-{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/video1.mp4?rlkey=yt1ifx6oy9unf7mrim28bqk1u&dl=1
+{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
     title='JupyterLab, VS Code, and Cursor' 
 >}}
 
