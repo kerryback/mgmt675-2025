@@ -39,6 +39,62 @@
     "href": "videos.html",
     "title": "",
     "section": "",
-    "text": "Google Colab and Python Basics\n\n\n\nData Analysis with Pandas\n\n\n\nPlotting in Python\n\n\n\nUsing APIs of LLMs\n\n\n\nJupyterLab, VS Code, and Cursor\n\n\n\nStreamlit Apps"
+    "text": "Google Colab and Python Basics"
+  },
+  {
+    "objectID": "videos.html#section",
+    "href": "videos.html#section",
+    "title": "",
+    "section": "",
+    "text": "Data Analysis with Pandas\n\n\n\nPlotting in Python\n\n\n\nUsing APIs of LLMs\n\n\n\nJupyterLab, VS Code, and Cursor\n\n\n\nStreamlit Apps"
+  },
+  {
+    "objectID": "videos.html#google-colab-and-python-basics",
+    "href": "videos.html#google-colab-and-python-basics",
+    "title": "",
+    "section": "",
+    "text": "Google Colab and Python Basics"
+  },
+  {
+    "objectID": "videos.html#data-analysis-with-pandas",
+    "href": "videos.html#data-analysis-with-pandas",
+    "title": "",
+    "section": "Data Analysis with Pandas",
+    "text": "Data Analysis with Pandas\n\n\nData Analysis with Pandas\n\n\n\n\nPlotting in Python\n\n\n\nUsing APIs of LLMs\n\n\n\nJupyterLab, VS Code, and Cursor\n\n\n\nStreamlit Apps"
+  },
+  {
+    "objectID": "videos.html#data-analysis-with-pandas-coming-soon",
+    "href": "videos.html#data-analysis-with-pandas-coming-soon",
+    "title": "",
+    "section": "Data Analysis with Pandas (coming soon)",
+    "text": "Data Analysis with Pandas (coming soon)"
+  },
+  {
+    "objectID": "videos.html#plotting-in-python-coming-soon",
+    "href": "videos.html#plotting-in-python-coming-soon",
+    "title": "",
+    "section": "Plotting in Python (coming soon)",
+    "text": "Plotting in Python (coming soon)"
+  },
+  {
+    "objectID": "videos.html#accessing-llm-apis-coming-soon",
+    "href": "videos.html#accessing-llm-apis-coming-soon",
+    "title": "",
+    "section": "Accessing LLM APIs (coming soon)",
+    "text": "Accessing LLM APIs (coming soon)"
+  },
+  {
+    "objectID": "videos.html#streamlit-apps-coming-soon",
+    "href": "videos.html#streamlit-apps-coming-soon",
+    "title": "",
+    "section": "Streamlit Apps (coming soon)",
+    "text": "Streamlit Apps (coming soon)\n\n\nStreamlit Apps"
+  },
+  {
+    "objectID": "videos.html#jupyterlab-vs-code-and-cursor-coming-soon",
+    "href": "videos.html#jupyterlab-vs-code-and-cursor-coming-soon",
+    "title": "",
+    "section": "JupyterLab, VS Code, and Cursor (coming soon)",
+    "text": "JupyterLab, VS Code, and Cursor (coming soon)\n\n\nJupyterLab, VS Code, and Cursor"
   }
 ]

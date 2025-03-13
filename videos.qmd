@@ -1,4 +1,4 @@
-
+## Google Colab and Python Basics
 
 ::: {.border}
 
@@ -6,9 +6,11 @@
     title='Google Colab and Python Basics' 
 >}}
 
-**Google Colab and Python Basics**
+
 
 :::
+
+## Data Analysis with Pandas (coming soon)
 
 ::: {.border}
 
@@ -17,9 +19,9 @@ Passcode: %=v1=YrK
     title='Google Colab and Python Basics' 
 >}}
 
-Data Analysis with Pandas
-
 :::
+
+## Plotting in Python (coming soon)
 
 ::: {.border}
 
@@ -27,9 +29,10 @@ Data Analysis with Pandas
     title='Plotting in Python' 
 >}}
 
-Plotting in Python
 
 :::
+
+## Accessing LLM APIs (coming soon)
 
 ::: {.border}
 
@@ -37,10 +40,10 @@ Plotting in Python
     title='Using APIs of LLMs' 
 >}}
 
-Using APIs of LLMs
 
 :::
 
+## JupyterLab, VS Code, and Cursor (coming soon)
 ::: {.border}
 
 {{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
@@ -52,7 +55,7 @@ JupyterLab, VS Code, and Cursor
 :::
 
 
-
+## Streamlit Apps (coming soon)
 
 ::: {.border}
 
