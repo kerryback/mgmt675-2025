@@ -39,6 +39,6 @@
     "href": "videos.html",
     "title": "",
     "section": "",
-    "text": "Title here\n\n\nPython basics\n\nData types, variables, and operators\nFunctions\nClasses, objects and methods\nLists, dictionaries, etc.\nFlow control\n\nPython libraries\n\nNumpy\nPandas\nMatplotlib, seaborn, and plotly\nStatsmodels, scipy, and scikit-learn\n\nAPIs\nLocal installation\nStreamlit"
+    "text": "Google Colab and Python Basics\n\n\n\nData Analysis with Pandas\n\n\n\nPlotting in Python\n\n\n\nUsing APIs of LLMs\n\n\n\nJupyterLab, VS Code, and Cursor\n\n\n\nStreamlit Apps"
   }
 ]
