@@ -42,7 +42,7 @@ Passcode: %=v1=YrK
 ::: {.border}
 
 {{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
-    title='Plotting in Python' 
+>}}
 :::
 
 ## Accessing LLM APIs (coming soon)
