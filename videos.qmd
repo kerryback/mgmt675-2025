@@ -1,12 +1,29 @@
-## Google Colab and Python Basics
+## Google Colab and Intro to Python
 
 ::: {.border}
 
 {{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/video1.mp4?rlkey=yt1ifx6oy9unf7mrim28bqk1u&dl=1 
-    title='Google Colab and Python Basics' 
 >}}
 
+:::
 
+## Functions and Flow Control
+
+::: {.border}
+
+{{< video https://www.dropbox.com/scl/fi/ydr3lebsch01pnbnby4fz/video2.mp4?rlkey=s3zwfdps5gselqqs9ysqd061q&dl=1 
+>}}
+
+:::
+
+## Objects, Attributes, and Methods 
+
+::: {.border}
+
+{{< video https://www.dropbox.com/scl/fi/ymqnsziwvxs6n0tasg8n2/video3.mp4?rlkey=vko4rclkldxa2zfc6sn3fppu8&dl=1
+>}}
+
+:::
 
 :::
 
@@ -16,7 +33,6 @@
 
 {{< video https://jgsb.zoom.us/rec/share/NMIRxSKmS6ydodbXaB6esbcDclijBiLVKdcGeJfnNBI0rX4KHX1o44dAZdgsYnct.cYyajHRtfB4vEFl_?startTime=1741901609000
 Passcode: %=v1=YrK 
-    title='Google Colab and Python Basics' 
 >}}
 
 :::
@@ -27,9 +43,6 @@ Passcode: %=v1=YrK
 
 {{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
     title='Plotting in Python' 
->}}
-
-
 :::
 
 ## Accessing LLM APIs (coming soon)
@@ -37,7 +50,6 @@ Passcode: %=v1=YrK
 ::: {.border}
 
 {{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
-    title='Using APIs of LLMs' 
 >}}
 
 
@@ -47,7 +59,6 @@ Passcode: %=v1=YrK
 ::: {.border}
 
 {{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
-    title='JupyterLab, VS Code, and Cursor' 
 >}}
 
 JupyterLab, VS Code, and Cursor
@@ -60,7 +71,6 @@ JupyterLab, VS Code, and Cursor
 ::: {.border}
 
 {{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
-    title='Streamlit Apps' 
 >}}
 
 Streamlit Apps
