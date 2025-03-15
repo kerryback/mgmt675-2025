@@ -20,6 +20,7 @@ website:
         file: schedule.qmd
       - text: Videos
         file: videos.qmd
+  
  
 format: 
   html:
