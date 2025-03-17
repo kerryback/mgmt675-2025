@@ -75,6 +75,7 @@
 \item Mean reversion
 \item Estimating parameters from historical data
 \item Forecasting the crude oil price
+\item Julius workflow
 \end{itemize}
 \end{frame}
 
@@ -147,5 +148,29 @@ where $\epsilon$'s are iid with mean 0.
 \item Warning: Julius may talk about AR(1) models and change the notation.
 \end{itemize}
 \end{frame}
+
+\section{Julius Workflow}
+
+\begin{frame}{Retirement planning workflow}
+\begin{itemize}
+\item User prompt: specify in real terms (today's dollars)
+\begin{itemize}
+\item  current investment account balance, 
+\item number of years before retirement
+\item planned annual savings amounts before retirement, 
+\item expected annual investment return and standard deviation 
+\item number of years of withdrawals after retirement
+\item planned annual withdrawals after retirement
+\end{itemize}
+\item Julius prompt:
+\begin{itemize}
+\item simulate the investment account balance year by year and repeat 1,000 times
+\item report the probability that the plan is successful (ending account balance is not negative).
+\item compute the median (across simulations) account balance each year and plot by year.
+\item produce a histogram of the ending account balance across simulations 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
 
 \end{document}
