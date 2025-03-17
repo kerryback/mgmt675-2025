@@ -73,14 +73,19 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Finding efficient portfolios}
-The following are equivalent methods:
+\section{Solving Equations for Mean-Variance Optimization}
+
+\begin{frame}{Mean-variance optimization}
+\begin{itemize}
+\item The following are essentially equivalent procedures:
 \begin{enumerate}
 \item Maximize Sharpe ratio = risk premium / risk
 \item Maximize expected return subject to not exceeding a risk limit 
 \item Minimize risk subject to achieving a target expected return
 \item Maximize expected return - penalty parameter times variance
 \end{enumerate}
+\item We can run a solver or solve equations to get the solutions.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Calculus review}
@@ -130,6 +135,7 @@ $$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
 \end{itemize}
 \end{frame}
 
+\section{Excel Example}
 
 \begin{frame}{Excel Spreadsheet Example}
 
@@ -138,6 +144,16 @@ Excel Sharpe Ratio Example (linked on Schedule page)
 based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
 \end{frame}
 
-
-
+\section{Risky Assets Only}
+\begin{frame}{Finding the Markowitz Bullet (Hyperbola)}
+\begin{itemize}
+\item We can also solve equations to find
+\begin{itemize}
+\item The global minimum variance portfolio
+\item Another portfolio of risky assets on the hyperbola
+\end{itemize}
+\item And all portfolios on the hyperbola are combinations of those two portfolios.
+\item However, Julius will probably run a solver if you ask it to find a portfolio of risky assets with weights summing to 1 that minimizes variance subject to a target expected return.
+\end{itemize}
+\end{frame}
 \end{document}

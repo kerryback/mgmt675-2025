@@ -80,7 +80,7 @@
 \end{itemize}
 \end{frame}
 
-\section{Overview}
+\section{CAPM}
 \begin{frame}{Cost of Equity Capital}
 \begin{itemize}
 \item According to the CAPM, the cost of equity capital is
@@ -91,7 +91,7 @@ $$\text{risk-free rate} + \text{beta} \times \text{market risk premium}$$
 \end{itemize}
 \end{frame}
 
-\section{Data}
+\section{Data Sources}
 \begin{frame}{FRED}
 \begin{itemize}
 \item FRED = Federal Reserve Economic Data
@@ -143,7 +143,7 @@ $$\text{risk-free rate} + \text{beta} \times \text{market risk premium}$$
 \end{itemize}
 \end{frame}
 
-\section{Data Analysis}
+\section{Regression}
 \begin{frame}{CAPM regression}
   \begin{itemize}
   \item We want to regress the excess stock return on the excess market return
@@ -154,7 +154,7 @@ $$\text{risk-free rate} + \text{beta} \times \text{market risk premium}$$
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Put it all together}
+\begin{frame}{Julius workflow}
     \begin{itemize}
     \item Create a Julius workflow in which the user inputs a ticker and specifies whether she wants to use the 3-month Treasury or 10-year Treasury as the risk-free rate.  
     \item The workflow should return the cost of equity capital and a scatter plot of the regression.

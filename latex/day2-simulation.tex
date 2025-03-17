@@ -78,6 +78,8 @@
 \end{itemize}
 \end{frame}
 
+\section{Simulating in Julius}
+
 \begin{frame}{Setting up a simulation in Julius/python}
 \begin{itemize}
 \item Model calculates outputs given inputs
@@ -94,6 +96,8 @@
 \item \pause To simulate, ask Julius to create the array in each simulation as an array of independent random variables drawn from some distribution.
 \end{itemize}
 \end{frame}
+
+\section{Random Walks and Mean Reversion}
 \begin{frame}{Random walks}
 \begin{itemize}
 \item A random walk is a variable for which the \alert{changes} or \alert{percent changes} are independent random variables.
@@ -131,8 +135,9 @@ where $\epsilon$'s are iid with mean 0.
 \end{itemize}
 \end{frame}
 
+\section{Example}
 
-\begin{frame}{Example}
+\begin{frame}{Simulating the Price of Crude Oil}
 \begin{itemize}
 \item Ask Julius to get monthly crude oil prices from FRED for the longest possible history using pandas data reader.
 \item Ask Julius to regress the crude oil price on the lagged price.
