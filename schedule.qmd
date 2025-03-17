@@ -4,7 +4,7 @@
 | Thur, Mar 20 | Simulation and forecasting |[slides](day2-simulation.pdf){target="_blank"} | 1. Portfolio optimization|
 | Tue, Mar 25 | Cost of equity capital | [slides](day3-costofequity.pdf){target="_blank"}| |
 | Thur, Mar 27 | Fama-French model| [slides](day3-costofequity.pdf)<br>[Morningstar Quantitative Ratings](assets/Morningstar_Quantitative_Rating_for_Funds.pdf)<br>[Corporate Finance and Reality](assets/JOhnGraham.pdf)| 2. Simulation|
-| Tue, Apr 1 | Attribution analysis | | |
+| Tue, Apr 1 | Attribution analysis |[slides](day5-attribution.pdf){target="_blank"} | |
 | Thur, Apr 3 | Financial ratios | | 3. Attribution analysis|
 | Tue, Apr 8 | Capital budgeting | | |
 | Thur, Apr 10 | Capital budgeting | | 4. Financial ratios|
