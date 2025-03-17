@@ -66,12 +66,15 @@
 \begin{frame}[plain]
 \titlepage
 \end{frame}
-\begin{frame}{Objective}
+\begin{frame}{Outline}
 \begin{itemize}
-\item The python code that AI will generate to find the tangency portfolio will probably use a different method than you've seen before.
-\item We'll do a quick overview of the method.
+\item Finding the capital allocation line by solving equations
+\item Finding the hyperbola of efficient portolios of only risky assets
+\item Excel example 
+\item Julius workflow
 \end{itemize}
 \end{frame}
+
 
 \section{Solving Equations for Mean-Variance Optimization}
 
@@ -135,15 +138,6 @@ $$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
 \end{itemize}
 \end{frame}
 
-\section{Excel Example}
-
-\begin{frame}{Excel Spreadsheet Example}
-
-Excel Sharpe Ratio Example (linked on Schedule page)
-
-based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
-\end{frame}
-
 \section{Risky Assets Only}
 \begin{frame}{Finding the Markowitz Bullet (Hyperbola)}
 \begin{itemize}
@@ -155,5 +149,35 @@ based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
 \item And all portfolios on the hyperbola are combinations of those two portfolios.
 \item However, Julius will probably run a solver if you ask it to find a portfolio of risky assets with weights summing to 1 that minimizes variance subject to a target expected return.
 \end{itemize}
+\end{frame}
+
+\section{Excel Example}
+
+\begin{frame}{Excel Spreadsheet Example}
+
+Excel Sharpe Ratio Example (linked on Schedule page)
+
+based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
+\end{frame}
+
+
+
+\section{Julius Workflow}
+
+\begin{frame}{Julius Workflow}
+\begin{itemize}
+  \item User prompt 
+  \begin{itemize}
+  \item Expected returns
+  \item Correlations and standard deviations
+  \item Risk-free rate
+  \item Portfolio objective (risk limit or target expected return)
+  \end{itemize}
+  \item Julius prompt
+  \begin{itemize}
+  \item Compute and output desired portfolio
+  \item Plot the hyperbola and the capital allocation line
+  \item Show the desired portfolio on the plot
+  \end{itemize}
 \end{frame}
 \end{document}

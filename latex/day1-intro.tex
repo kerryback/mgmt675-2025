@@ -183,39 +183,42 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}{Effective Prompting}
+\begin{itemize}
+\item We are writing prompts to Julius that will supplement user input.
+\item Be explicit in what you want.  Break down into steps if possible.
+\item Provide examples to Julius (code that has worked before or spreadsheets).\item Ask Julius to explain each step as it accomplishes it.
+\item Ask Julius to explain what it has done as it accomplishes each step.
+\end{itemize}
+\end{frame}
+
 \section{Excel, Python, and AI}
 
 \begin{frame}{Excel and Python}
 \begin{itemize}
+  \item Python output $\rightarrow$ Excel data is easy
 \item Data in Excel $\rightarrow$ python is easy
-\item Python output $\rightarrow$ Excel is easy
-\item Formulas in Excel $\rightarrow$ python is possible via AI
-\item Python formulas $\rightarrow$ Excel is possible via Python in Excel
+\item Formulas in Excel $\rightarrow$ python is possible via AI (ask Julius to read the formulas not the data).
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Excel $\rightarrow$ Python via AI}
+\begin{frame}{Building and saving models in python with AI}
 \begin{itemize}
-\item Default is to assume each worksheet is a single table and read the numbers (not the formulas) into a dataframe.
-\item Can ask Julius to read the formulas.
-\item Can also warn Julius that there are multiple tables in a worksheet if that is the case.
-\item Python implements formulas as functions.   Can ask Julius to read formulas and convert to functions.  For example, a function can compute a row of a cash flow table from other rows.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Building models in python with AI}
+\item Building:
 \begin{itemize}
 \item Read and mimic Excel model, or
 \item Ask AI to build a model from scratch
 \item Both are often iterative processes.  Need to correct AI mistakes.
 \end{itemize}
-\end{frame}
-
-\begin{frame}{Saving and reusing models}
+\item Saving:
 \begin{itemize}
-\item As Julius workflow: Copy working code and paste it into a "Prompt" cell when creating a workflow.  Ask Julius to use the code (works somewhat).
-\item Copy code and paste into a Jupyter notebook on your hard drive or Google Drive (for Colab).
+\item Add working code to a Julius workflow: Copy working code and paste it into a "Prompt" cell as an example when creating a workflow.  
+\item Save working code elsewhere:
+\begin{itemize}
+\item Copy and paste into a Jupyter notebook on your hard drive or Google Drive (for Colab).
 \item Create a chatbot app that runs the code.
+\end{itemize}
+\end{itemize}
 \end{itemize}
 \end{frame}
 
