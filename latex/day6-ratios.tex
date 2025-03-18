@@ -312,5 +312,19 @@
 \end{itemize}
 \end{frame}
 
+\section{More on EDGAR}
+
+\begin{frame}{Scraping EDGAR}
+\begin{itemize}
+\item We can retrieve all of the filings of a company by 
+\begin{itemize}
+\item Find the company's CIK (web search)
+\item Add zeros to the beginning of the CIK until it is 10 digits
+\item Paste the 10-digit CIK into https://data.sec.gov/api/xbrl/companyfacts/CIK\{cik\_goes\_here\}.json without the braces and visit the URL
+\end{itemize}
+\item Ask Julius to do this.  We will want the us-gaap data.  Filter to 10Ks or 10Qs or by year and create a dataframe from the data.
+\end{itemize}
+\end{frame}
+
 
 \end{document}
