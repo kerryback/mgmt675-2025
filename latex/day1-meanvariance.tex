@@ -138,7 +138,18 @@ $$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
 \end{itemize}
 \end{frame}
 
+
+\section{Excel Example}
+
+\begin{frame}{Excel Spreadsheet Example}
+
+Excel Example linked on Schedule page
+
+based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
+\end{frame}
+
 \section{Risky Assets Only}
+
 \begin{frame}{Finding the Markowitz Bullet (Hyperbola)}
 \begin{itemize}
 \item We can also solve equations to find
@@ -151,33 +162,33 @@ $$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
 \end{itemize}
 \end{frame}
 
-\section{Excel Example}
-
-\begin{frame}{Excel Spreadsheet Example}
-
-Excel Example linked on Schedule page
-
-based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
-\end{frame}
-
-
-
 \section{Julius Workflow}
 
 \begin{frame}{Julius Workflow}
-\begin{itemize}
-  \item User prompt 
   \begin{itemize}
-  \item Expected returns
-  \item Correlations and standard deviations
+  \item User prompt:
+  \begin{itemize}
+  \item Asset names, expected returns, and covariances
   \item Risk-free rate
-  \item Portfolio objective (risk limit or target expected return)
   \end{itemize}
-  \item Julius prompt
+  \item Julius prompt:
   \begin{itemize}
-  \item Compute and output desired portfolio
-  \item Plot the hyperbola and the capital allocation line
-  \item Show the desired portfolio on the plot
+  \item Compute the tangency portfolio and output to the user
+  \item Compute the expected return and standard deviation of the tangency portfolio and output to the user
   \end{itemize}
-\end{frame}
+  \item Optional additional prompt for Julius:
+  \begin{itemize}
+  \item Compute the minimum risk portfolio with weights that sum to 1 (fully invested in risky assets) for various expected return targets.
+  \item  Plot the means and standard deviations of the minimum risk portfolios. 
+  \item Show the tangency portfolio and capital allocation line on the plot.  
+  \item Display the figure and return a jpeg of it.
+  \end{itemize}
+\end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Checking Julius' Work}
+    Run the workflow with data from Topic5.1\_SharpeRatioExamples.xlsx from Applied Finance (linked on our Schedule page for Day 1).
+    
+    Check that the tangency portfolio is correct.
+  \end{frame}
 \end{document}
