@@ -1,15 +1,15 @@
 | Date | Topics | Slides etc | Assignments etc |
 |------|---------|------------|--------------|
 | Tue, Mar 18 | Portfolio optimization | [Course intro](day1-intro.pdf){target="_blank"} <br>[slides](day1-meanvariance.pdf){target="_blank"}<br>[Excel Example](Topic5.1_SharpeRatioExamples_Revised.xlsx){target="_blank"}| |
-| Thur, Mar 20 | Simulation and forecasting<br>Break-outs |[slides](day2-simulation.pdf){target="_blank"}<br>[Online Data and Python](assets/data.pdf) | 1. Portfolio optimization|
-| Tue, Mar 25 | Cost of equity capital<br>Break-outs | [slides](day3-costofequity.pdf){target="_blank"}| |
+| Thur, Mar 20 | Review of portfolio optimization<br>Break-outs<br>Simulation and forecasting<br> |[Online Data and Python](assets/data.pdf)<br><br>[slides](day2-simulation.pdf){target="_blank"} | 1. Portfolio optimization|
+| Tue, Mar 25 | Review of simulation and forecasting<br>Break-outs<br>Cost of equity capital | <br><br>[slides](day3-costofequity.pdf){target="_blank"}| |
 | Thur, Mar 27 | Fama-French model| [slides](day3-costofequity.pdf)<br>[Morningstar Quantitative Ratings](assets/Morningstar_Quantitative_Rating_for_Funds.pdf)<br>[Corporate Finance and Reality](assets/JOhnGraham.pdf)| 2. Simulation|
-| Tue, Apr 1 | Attribution analysis<br>Break-outs |[slides](day5-attribution.pdf){target="_blank"} | |
+| Tue, Apr 1 | Review of Fama-French<br>Break-outs<br>Attribution analysis |<br><br>[slides](day5-attribution.pdf){target="_blank"} | |
 | Thur, Apr 3 | Financial ratios | [slides](day6-ratios.pdf) | 3. Attribution analysis|
-| Tue, Apr 8 | Capital budgeting| [slides](day7-capitalbudgeting.pdf)| |
-| Thur, Apr 10 | Capital budgeting<br>Break-outs  | | 4. Financial ratios<br>Read *The Sneaker Project* before class|
+| Tue, Apr 8 | Capital budgeting| [slides](day7-capitalbudgeting.pdf)| Read *The Sneaker Project* before class|
+| Thur, Apr 10 | Review of capital budgeting<br>Break-outs<br>Sensitivity analysis  | | 4. Financial ratios|
 | Tue, Apr 15 | Valuation | | | 
-| Thur, Apr 17 | Option portfolios<br>Break-outs | | 5. Capital budgeting|
+| Thur, Apr 17 | Review of Valuation<br>Break-outs<br>Option portfolios | | 5. Capital budgeting|
 | Tue, Apr 22 | Intro to machine learning| | |
 | Thur, Apr 24 | Applications of machine learning| | 6. Valuation|
 
