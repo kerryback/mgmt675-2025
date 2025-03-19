@@ -1,0 +1,266 @@
+---
+title: "Using Python to Access Free Financial Data"
+author: "Open-Access Finance Guide"
+format: pdf
+toc: true
+toc-depth: 2
+---
+
+## Introduction
+
+Financial analysts and researchers have access to numerous **free, open-access online databases** covering market prices, macroeconomic indicators, company fundamentals, and academic finance datasets. This guide provides a practical overview of these data sources and demonstrates how to use Python libraries (e.g., Pandas, yfinance, Alpha Vantage, FRED API, Quandl, and SQLAlchemy) to fetch, process, and analyze the data.
+
+We will also discuss additional notes on data quality, limitations, and tips for practical usage. By the end of this guide, you should be able to:
+
+- Identify key free financial data sources  
+- Use Python libraries to fetch market data, macroeconomic data, and fundamental data  
+- Work with academic finance datasets  
+- Store and retrieve data in a local database via SQLAlchemy  
+- Understand some caveats (rate limits, licensing, data coverage) and best practices  
+
+---
+
+## 1. Overview of Free Financial Data Sources
+
+**Market Data (Stocks, FX, Crypto)**  
+- **Yahoo Finance** (unofficial API, accessible with yfinance or pandas_datareader)  
+- **Alpha Vantage** (requires free API key, use alpha_vantage library or pandas_datareader)  
+- **IEX Cloud** (free tier with account token, use REST calls or unofficial wrappers)  
+- **Tiingo** (free plan with limited usage, pandas_datareader supports it)  
+- **Stooq** (no key needed, accessible via pandas_datareader)
+
+**Macroeconomic Data**  
+- **FRED (Federal Reserve Economic Data)** – Over 800,000 time series, free API key  
+- **World Bank Open Data** – Global development indicators, free  
+- **OECD, Eurostat** – International macro data, free via pandas_datareader  
+- **Nasdaq Data Link (Quandl)** – Multiple free macro/commodity datasets
+
+**Company Fundamentals**  
+- **Yahoo Finance** – Fundamentals, recent financial statements (yfinance)  
+- **SimFin** – Income statements, balance sheets, cash flow for US/EU companies  
+- **Alpha Vantage** – Some fundamentals with free API key  
+- **Financial Modeling Prep** – Another free API for statements (JSON-based)  
+- **SEC EDGAR** – Free filings data (requires web scraping or specialized libraries)
+
+**Academic Finance Datasets**  
+- **Fama-French / Kenneth French Data Library** – Factor returns, industry portfolios  
+- **Kaggle Datasets** – User-curated financial data, use Kaggle API or manual download  
+- **Nasdaq Data Link (Quandl)** – Robert Shiller’s CAPE, other academic datasets  
+- **University / Research Websites** – Often host CSV/Excel for specific papers
+
+**Key Python Libraries**  
+- **pandas** – Essential for data manipulation (DataFrame operations, pd.read_csv, etc.)  
+- **pandas_datareader** – Unified API to fetch data from Yahoo, FRED, Fama-French, etc.  
+- **yfinance** – Unofficial Yahoo Finance library (no API key needed)  
+- **alpha_vantage** – Official library for Alpha Vantage  
+- **fredapi** – Access FRED (requires free API key)  
+- **quandl** – Access Nasdaq Data Link for many free & premium datasets  
+- **simfin** – Bulk fundamental statements from SimFin  
+- **SQLAlchemy** – For storing/retrieving financial data in local or remote SQL databases  
+- **requests** – General HTTP requests if you need to call REST APIs directly  
+
+---
+
+## 2. Getting Started with Market Data
+
+### 2.1 Yahoo Finance (yfinance)
+
+yfinance provides a straightforward way to download price data without an API key. For instance:
+
+    import yfinance as yf
+    import pandas as pd
+
+    # Fetch historical daily prices for AAPL
+    ticker = yf.Ticker("AAPL")
+    hist = ticker.history(start="2020-01-01", end="2021-12-31")
+
+    # Calculate daily returns
+    hist['Daily Return'] = hist['Close'].pct_change() * 100
+
+    print(hist.head())
+
+Notes:  
+- Yahoo’s API is unofficial. Data is free but check for usage restrictions.  
+- You can also pull option chains, dividends, splits, or fundamental data with the same library.
+
+### 2.2 Alpha Vantage
+
+Alpha Vantage offers free real-time and historical data for stocks, forex, and crypto. You need a free API key. Rate limit: 5 API calls/minute, 500/day on the free tier.
+
+    import pandas_datareader.data as web
+    from datetime import datetime
+
+    start = datetime(2020, 1, 1)
+    end = datetime(2020, 12, 31)
+
+    # Use Alpha Vantage as a data source
+    # Replace YOUR_API_KEY with your actual key
+    df_msft = web.DataReader('MSFT', 'av-daily-adjusted', start, end,
+                             api_key='YOUR_API_KEY')
+
+    print(df_msft.tail())
+
+### 2.3 Other Market Data Options
+
+- **IEX Cloud**: Free (limited) with an account token.  
+- **Tiingo**: End-of-day stock data; register for a free key and use pandas_datareader.  
+- **Stooq**: Daily data for many global markets, no key required, also via pandas_datareader (“stooq”).  
+- **Cryptocurrencies**: Libraries for Binance, CoinGecko, etc., can fetch free crypto data.
+
+---
+
+## 3. Accessing Macroeconomic Data
+
+### 3.1 FRED (Federal Reserve Economic Data)
+
+FRED houses macro indicators like GDP, unemployment, interest rates. Sign up for a free API key. Access via fredapi or pandas_datareader.
+
+    from fredapi import Fred
+    import pandas as pd
+
+    fred = Fred(api_key='YOUR_FRED_API_KEY')
+    gdp_series = fred.get_series('GDP')
+    unemp_series = fred.get_series('UNRATE')
+
+    df = pd.DataFrame({'GDP': gdp_series, 'UnempRate': unemp_series})
+    print(df.tail())
+
+### 3.2 World Bank Data
+
+World Bank offers global economic indicators. Use the wb module in pandas_datareader.
+
+    from pandas_datareader import wb
+
+    # GDP per capita (constant 2010 US$)
+    gdp_pc = wb.download(indicator='NY.GDP.PCAP.KD', country=['US','CN','IN'],
+                         start=2010, end=2020)
+    print(gdp_pc.head(10))
+
+### 3.3 Quandl (Nasdaq Data Link)
+
+Many free macro datasets. Requires a free API key.
+
+    import quandl
+    quandl.ApiConfig.api_key = "YOUR_API_KEY"
+
+    # Fetch daily oil price series from FRED, mirrored on Quandl
+    oil_prices = quandl.get("FRED/DCOILWTICO",
+                            start_date="2015-01-01",
+                            end_date="2020-12-31")
+
+    print(oil_prices.head())
+
+---
+
+## 4. Company Fundamentals
+
+### 4.1 Yahoo Finance Fundamentals
+
+yfinance.Ticker includes attributes for company information and financial statements:
+
+    import yfinance as yf
+
+    msft = yf.Ticker("MSFT")
+    info = msft.info
+    print("Market Cap:", info['marketCap'])
+    print("Trailing PE:", info['trailingPE'])
+
+    # Annual earnings (revenue & net income)
+    print(msft.earnings)
+
+### 4.2 SimFin (Simple Financials)
+
+SimFin aggregates SEC filings for US/EU companies. Free API key:
+
+    import simfin as sf
+    from simfin.names import *
+
+    sf.set_api_key("YOUR_SIMFIN_API_KEY")
+    sf.set_data_dir("~/simfin_data/")
+
+    income_df = sf.load_income(variant='annual', market='us')
+    msft_income = income_df[income_df['Ticker'] == 'MSFT']
+    print(msft_income[['Revenue', 'Net Income']].tail(5))
+
+### 4.3 Alpha Vantage Fundamentals
+
+Alpha Vantage also provides fundamentals, though you’ll need to parse JSON yourself or use their FundamentalData class from the alpha_vantage library. Data coverage can be spotty outside major US tickers.
+
+---
+
+## 5. Academic Finance Datasets
+
+### 5.1 Fama-French / Kenneth French Data Library
+
+Access these classic factor and industry portfolio datasets with pandas_datareader:
+
+    import pandas_datareader.data as web
+
+    ff5 = web.DataReader('F-F_Research_Data_5_Factors_2x3', 'famafrench')
+    print(ff5['DESCR'][:200])
+    factors = ff5[0]
+    print(factors.tail())
+
+### 5.2 Kaggle Datasets
+
+Kaggle hosts a variety of user-provided finance/economics datasets. Install the Kaggle CLI or opendatasets library. After placing your kaggle.json credential in ~/.kaggle/, you can do:
+
+    import opendatasets as od
+    od.download("https://www.kaggle.com/datasets/zillow/zecon")
+
+Then load CSV files with Pandas:
+
+    import pandas as pd
+    df = pd.read_csv("zecon/State_time_series.csv")
+    print(df.head())
+
+---
+
+## 6. Working with SQL Databases (SQLAlchemy)
+
+You might want to store large amounts of data in a relational database (SQLite, PostgreSQL, MySQL).
+
+    from sqlalchemy import create_engine
+    import pandas as pd
+
+    engine = create_engine('sqlite:///financial_data.db')
+
+    # Suppose df_prices is a DataFrame of daily prices
+    df_prices.to_sql('daily_prices', engine, index=False, if_exists='replace')
+
+    apple_prices = pd.read_sql("SELECT * FROM daily_prices WHERE Ticker='AAPL'", engine)
+    print(apple_prices.tail())
+
+SQLAlchemy helps integrate queries directly with your Python workflow.
+
+---
+
+## 7. Considerations and Limitations
+
+1. **Data Frequency**  
+   Most free sources provide daily or lower frequency. Intraday data is usually limited.
+
+2. **Rate Limits**  
+   Be mindful of call limits (e.g., Alpha Vantage’s 5 calls/min, 500/day). You may need to batch requests.
+
+3. **Data Quality**  
+   Check coverage and timeliness. Some free sources may have missing or delayed data.
+
+4. **Licensing and Terms**  
+   Yahoo Finance data, for example, is for personal use only. Commercial use may violate terms.
+
+5. **Coverage**  
+   US tickers are typically well-covered; international stocks/funds may have partial coverage.
+
+6. **Academic Rigor**  
+   Factor data from Kenneth French’s website is standard for academic studies. Kaggle data can be user-curated, so verify sources.
+
+---
+
+## 8. Conclusion
+
+With Python’s ecosystem of libraries, you can collect a wide range of **free** financial data—market prices, macro indicators, and company fundamentals—to power analyses and research. While these open-access resources have limitations (rate limits, data quality quirks), they are excellent for prototyping, educational projects, or personal use. For deeper coverage (e.g., intraday tick data, complete global fundamentals), you may eventually need paid services (e.g., Bloomberg, WRDS/CRSP, FactSet).
+
+Nevertheless, leveraging yfinance, pandas_datareader, alpha_vantage, fredapi, quandl, and simfin can take you far in building Python-based financial applications. Combine these tools with SQLAlchemy or Pandas DataFrames to create robust workflows for financial modeling, econometrics, and academic research—all without subscription fees.
+
+*Happy analyzing!*
