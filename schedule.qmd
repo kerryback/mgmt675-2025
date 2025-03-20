@@ -3,7 +3,7 @@
 
 | Date | Topics | Slides etc | Assignments etc |
 |------|---------|------------|--------------|
-| Tue, Mar 18 | Portfolio optimization | [Course intro](day1-intro.pdf){target="_blank"} <br>[Mean-variance slides](day1-meanvariance.pdf){target="_blank"}<br>[Excel Example](Topic5.1_SharpeRatioExamples_Revised.xlsx){target="_blank"}| |
+| Tue, Mar 18 | Portfolio optimization | [Course intro](day1-intro.pdf){target="_blank"}<br>[Mean-variance slides](day1-meanvariance.pdf){target="_blank"}<br>[Excel Example](Topic5.1_SharpeRatioExamples_Revised.xlsx){target="_blank"}| |
 | Thur, Mar 20 | Review of portfolio optimization<br>Break-outs<br>Simulation and forecasting<br> |[Online Data and Python](assets/data.pdf)<br><br>[Simulation slides](day2-simulation.pdf){target="_blank"} | 1. Portfolio optimization|
 | Tue, Mar 25 | Review of simulation <br>Break-outs<br>Cost of equity capital | <br><br>[Cost of Equity slides](day3-costofequity.pdf){target="_blank"}| |
 | Thur, Mar 27 | Fama-French model| [Fama-French slides](day3-costofequity.pdf)<br>[Morningstar Quantitative Ratings](assets/Morningstar_Quantitative_Rating_for_Funds.pdf)<br>[Corporate Finance and Reality](assets/JOhnGraham.pdf)| 2. Simulation|

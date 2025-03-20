@@ -16,6 +16,12 @@
 >}}
 :::
 
+## Getting Data into and out of Python (coming soon)
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/ymqnsziwvxs6n0tasg8n2/video3.mp4?rlkey=vko4rclkldxa2zfc6sn3fppu8&dl=1
+>}}
+:::
+
 ## Data Analysis with Pandas (coming soon)
 ::: {.border}
 {{< video https://jgsb.zoom.us/rec/share/NMIRxSKmS6ydodbXaB6esbcDclijBiLVKdcGeJfnNBI0rX4KHX1o44dAZdgsYnct.cYyajHRtfB4vEFl_?startTime=1741901609000
@@ -29,18 +35,23 @@ Passcode: %=v1=YrK
 >}}
 :::
 
-## Accessing LLM APIs (coming soon)
-::: {.border}
-{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
->}}
-:::
-
-## JupyterLab, VS Code, and Cursor (coming soon)
+## Local Installation of Python and Jupyter (coming soon)
 ::: {.border}
 {{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
 >}}
 :::
 
+## VS Code, Cursor, and Gemini Data Assist (coming soon)
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
+>}}
+:::
+
+## Accessing LLM APIs (coming soon)
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
+>}}
+:::
 
 ## Streamlit Apps (coming soon)
 ::: {.border}
