@@ -1,11 +1,11 @@
 [Breakout Room Assignments](https://docs.google.com/spreadsheets/d/1aiVTxTzjJi18bF9WNqUjbYU-0eW1bzbjV2YJuU9VCKQ/edit?usp=sharing)
 
 
-| Date | Topics | Slides etc | Assignments etc |
+| Date | Topics | Links | Assignments |
 |------|---------|------------|--------------|
-| Tue, Mar 18 | Portfolio optimization | [Course intro](day1-intro.pdf){target="_blank"}<br>[Mean-variance slides](day1-meanvariance.pdf){target="_blank"}<br>[Excel Example](Topic5.1_SharpeRatioExamples_Revised.xlsx){target="_blank"}| |
-| Thur, Mar 20 | Review of portfolio optimization<br>Break-outs<br>Simulation and forecasting<br> |[Online Data and Python](assets/data.pdf)<br><br>[Simulation slides](day2-simulation.pdf){target="_blank"} | 1. Portfolio optimization|
-| Tue, Mar 25 | Review of simulation <br>Break-outs<br>Cost of equity capital | <br><br>[Cost of Equity slides](day3-costofequity.pdf){target="_blank"}| |
+| Tue, Mar 18 | Portfolio optimization | [Course intro slides](day1-intro.pdf){target="_blank"}<br>[Mean-variance slides](day1-meanvariance.pdf){target="_blank"}<br>[Excel example](Topic5.1_SharpeRatioExamples_Revised.xlsx){target="_blank"}<br>[Julius mean-variance thread](https://julius.ai/s/0f3dbb0f-0b8e-4027-b435-0c42907a9d92)| |
+| Thur, Mar 20 | Review of portfolio optimization<br>Break-outs<br>Simulation and forecasting<br> |[Online data and python report](assets/data.pdf)<br>[Simulation slides](day2-simulation.pdf){target="_blank"}<br>[Julius simulation thread](https://julius.ai/s/78de095d-6ede-4a43-bba1-729ef6047689) | 1. Portfolio optimization|
+| Tue, Mar 25 | Retirement planning <br>Break-outs<br>Cost of equity capital | [Retirement planning workbook](assets/RetirementPlanning.xlsx)<br>[Cost of equity slides](day3-costofequity.pdf){target="_blank"}| |
 | Thur, Mar 27 | Fama-French model| [Fama-French slides](day3-costofequity.pdf)<br>[Morningstar Quantitative Ratings](assets/Morningstar_Quantitative_Rating_for_Funds.pdf)<br>[Corporate Finance and Reality](assets/JOhnGraham.pdf)| 2. Simulation|
 | Tue, Apr 1 | Review of Fama-French<br>Break-outs<br>Attribution analysis |<br><br>[Attribution slides](day5-attribution.pdf){target="_blank"} | |
 | Thur, Apr 3 | Financial ratios | [Financial ratios slides](day6-ratios.pdf) | 3. Attribution analysis|

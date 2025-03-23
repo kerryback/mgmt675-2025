@@ -151,9 +151,8 @@ where $\epsilon$'s are iid with mean 0.
 
 \section{Julius Workflow}
 
-\begin{frame}{Retirement planning workflow}
-\begin{itemize}
-\item User prompt: specify in real terms (today's dollars)
+\begin{frame}{Retirement planning workflow: User prompt}
+Specify in real terms (today's dollars)
 \begin{itemize}
 \item  current investment account balance, 
 \item number of years before retirement
@@ -161,14 +160,18 @@ where $\epsilon$'s are iid with mean 0.
 \item expected annual investment return and standard deviation 
 \item number of years of withdrawals after retirement
 \item planned annual withdrawals after retirement
+\item borrowing rate if balance goes negative
 \end{itemize}
-\item Julius prompt:
+\end{frame}
+
+\begin{frame}{Retirement planning workflow: Julius prompt}
 \begin{itemize}
-\item simulate the investment account balance year by year and repeat 1,000 times
-\item report the probability that the plan is successful (ending account balance is not negative).
-\item compute the median (across simulations) account balance each year and plot by year.
-\item produce a histogram of the ending account balance across simulations 
-\end{itemize}
+\item Simulate returns by year 
+\item Update the investment account balance each year based on the planned deposit or withdrawal and the simulated return (using the borrowing rate instead if the balance is negative)
+\item Repeat 1,000 times
+\item Report the probability that the plan is successful (ending account balance is not negative).
+\item Compute the median (across simulations) account balance each year and plot by year.
+\item Produce a histogram of the ending account balance across simulations 
 \end{itemize}
 \end{frame}
 
