@@ -199,28 +199,36 @@
 \end{frame}
 
 
-\section{Creating a Slide Deck}
+\section{Creating a Julius Workflow}
 
-\begin{frame}{Slide Deck}
+\begin{frame}{Inputs, income statement, and balance sheet}
     \begin{itemize}
-        \item You can tell Julius to transpose each table and export it to a slide in a Powerpoint deck.
-        \item You can tell Julius to display each table in a pretty format: numbers centered under column headers, alternating row shades, different background shades for headers and row names, etc.
-        \item You can also edit the table styles in Powerpoint after Julius finishes.
+        \item User prompt: cap ex, depreciation schedules
+        \item Julius prompt: create and display transposed PP\&E table: cap ex, gross PP\&E, depreciation, accumulated depreciation, net PP\&E
+        \item User prompt: sales, COGS, SG\&A, tax rate 
+        \item Julius prompt: create and display transposed income statement
+        \item User prompt: inventory, receivables, inventory 
+        \item Julius prompt: create and display transpose net working capital table: sales, COGS, SG\&A, EBITDA, depreciation, EBIT, taxes, net income
+        \item Notes: users should be able to specify \$ amounts or as percents of other items.
     \end{itemize}
 \end{frame}
 
-\section{Creating a Julius Workflow}
+\begin{frame}{Cash flows and valuation}
+    \begin{itemize}
+        \item User prompt:Are the income statement and balance sheet correct?  If not, what changes need to be made?
+        \item Julius prompt: If user approves income statement and balance sheet, create and display transposed statement of cash flows.
+        \item User prompt: input the cost of capital
+        \item Julius prompt: create and display valuation table
+    \end{itemize}
+\end{frame}
 
-\begin{frame}{Creating a Julius Workflow}
- 
-    Let's try building in pieces, getting each piece to work before moving on.
-    \begin{enumerate} 
-        \item Balance sheet Net PP\&E
-        \item Income statement 
-        \item Balance sheet Net Working Capital
-        \item Statement of cash flows
-        \item Valuation 
-    \end{enumerate}
+
+\begin{frame}{PowerPoint (Optional)}
+    \begin{itemize}
+        \item You can tell Julius to transpose each table and export it to a slide in a Powerpoint deck.
+        \item You can tell Julius to display each table in a pretty format: numbers centered under column headers, alternating row shades, different background shades for headers and row names, etc.
+        \item You can also edit the table styles in PowerPoint after Julius finishes.
+    \end{itemize}
 \end{frame}
 
 

@@ -17,7 +17,7 @@ for i in range(n_assets):
     asset_names.append(name)
 
 # Input expected returns
-st.subheader('Expected Returns (annualized)')
+st.subheader('Expected Returns')
 returns = []
 for i in range(n_assets):
     ret = st.number_input(f'Expected return for {asset_names[i]}:', value=0.10, format='%.4f')
@@ -25,7 +25,7 @@ for i in range(n_assets):
 returns = np.array(returns)
 
 # Input covariance matrix
-st.subheader('Covariance Matrix (annualized)')
+st.subheader('Covariance Matrix')
 cov_matrix = np.zeros((n_assets, n_assets))
 for i in range(n_assets):
     for j in range(i, n_assets):
@@ -37,7 +37,7 @@ for i in range(n_assets):
         cov_matrix[j,i] = val
 
 # Input risk-free rate
-rf = st.number_input('Risk-free rate (annualized):', value=0.02, format='%.4f')
+rf = st.number_input('Risk-free rate:', value=0.02, format='%.4f')
 
 def portfolio_stats(weights, returns, cov_matrix):
     portfolio_return = np.sum(returns * weights)
