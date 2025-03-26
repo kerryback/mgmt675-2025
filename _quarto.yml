@@ -5,6 +5,7 @@ project:
     - index.qmd
     - schedule.qmd
     - videos.qmd
+    - mentis.qmd
               
 website:
   title: ""
@@ -18,6 +19,8 @@ website:
         file: index.qmd
       - text: Schedule 
         file: schedule.qmd
+      - text: Mentis
+        file: mentis.qmd
       - text: Videos
         file: videos.qmd
   

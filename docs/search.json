@@ -60,7 +60,7 @@
     "href": "videos.html#data-analysis-with-pandas",
     "title": "",
     "section": "Data Analysis with Pandas",
-    "text": "Data Analysis with Pandas\n\n\nData Analysis with Pandas\n\n\n\n\nPlotting in Python\n\n\n\nUsing APIs of LLMs\n\n\n\nJupyterLab, VS Code, and Cursor\n\n\n\nStreamlit Apps"
+    "text": "Data Analysis with Pandas"
   },
   {
     "objectID": "videos.html#data-analysis-with-pandas-coming-soon",
@@ -152,5 +152,26 @@
     "title": "",
     "section": "VS Code, Cursor, and Gemini Data Assist (coming soon)",
     "text": "VS Code, Cursor, and Gemini Data Assist (coming soon)"
+  },
+  {
+    "objectID": "mentis.html",
+    "href": "mentis.html",
+    "title": "",
+    "section": "",
+    "text": "Mar 27: accesscode = 3321 2469"
+  },
+  {
+    "objectID": "videos.html#getting-data-into-and-out-of-python",
+    "href": "videos.html#getting-data-into-and-out-of-python",
+    "title": "",
+    "section": "Getting Data into and out of Python",
+    "text": "Getting Data into and out of Python"
+  },
+  {
+    "objectID": "videos.html#cursor-coming-soon",
+    "href": "videos.html#cursor-coming-soon",
+    "title": "",
+    "section": "Cursor (coming soon)",
+    "text": "Cursor (coming soon)"
   }
 ]
