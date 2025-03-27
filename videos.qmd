@@ -28,7 +28,7 @@
 >}}
 :::
 
-## Local Installation of Python and Jupyter (coming soon)
+## Local Installation of Python and Jupyter 
 ::: {.border}
 {{< video https://www.dropbox.com/scl/fi/kvnpjthwl66oh0ak58vip/video6.mp4?rlkey=xeyz5arh6e5ml9dafnnjs6t30&dl=1
 >}}
