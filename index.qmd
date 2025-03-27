@@ -8,10 +8,6 @@
 [kerryback@gmail.com](mailto: kerryback@gmail.com)<br>
 J. Howard Creekmore Professor of Finance and Professor of Economics
 
-#### Teaching Assistant
-
-[Anthony Zdrojewski](mailto: Anthony.M.Zdrojewski@rice.edu)<br>
-soon-to-be Assistant Professor of Finance, TCU
 
 #### Meeting Schedule
 
@@ -46,10 +42,11 @@ A chatbot for financial analysis is an app that
 - outputs the results to the user,
 - accepts additional user input and repeats the process.
 
-We are going to build pseudo-chatbots as [Julius.ai](https://julius.ai/) workflows.  Julius provides the facility to accept user input, communicates with LLMs, and creates the numerical software.  So, we can focus on the financial analysis.  We will create Julius workflows to compute the cost of equity capital, do simulation, analyze financial statements, optimize portfolios, perform mutual fund performance evaluation, produce capital budgeting and valuation analyses, design option portfolios, and perform credit risk assessment. Time will be alloted to build workflows during break-outs in class.   
+We are going to build pseudo-chatbots as [Julius.ai](https://julius.ai/) workflows.  Julius provides the facility to accept user input, communicates with LLMs (including Claude Sonnet 3.5 and 3.7 at the time of this writing), and creates the numerical software.  So, we can focus on the financial analysis.  There are alternative code generation platforms, but at this time Julius provides the best experience, including the ability to install additional python libraries, search the internet, and execute generated code.  We will create Julius workflows to compute the cost of equity capital, do simulation, analyze financial statements, optimize portfolios, perform mutual fund performance evaluation, produce capital budgeting and valuation analyses, design option portfolios, and perform credit risk assessment. Time will be alloted to build workflows during break-outs in class.   
 
 We will also explore building chatbot apps using [Streamlit](https://streamlit.io/).  This is an "extra" part of the course and is not required in any of the assignments.  The purpose is to dig just a little deeper into how finance chatbots can be built.  
 
+There is some randomness in an LLM's code generation process.  To check that the code works, we need to test it on small examples that we can solve by other means.  It is also useful to be able to read the code that is generated.  To facilitate this, some basic instructional videos on python will be provided.  
 
 #### Assignments and Grading
 
