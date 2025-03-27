@@ -5,8 +5,7 @@ project:
     - index.qmd
     - schedule.qmd
     - videos.qmd
-    - mentis.qmd
-              
+                  
 website:
   title: ""
   search: false  
@@ -17,10 +16,8 @@ website:
     right:
       - text: Syllabus
         file: index.qmd
-      - text: Schedule 
+      - text: Schedule/Materials 
         file: schedule.qmd
-      - text: Mentis
-        file: mentis.qmd
       - text: Videos
         file: videos.qmd
   
