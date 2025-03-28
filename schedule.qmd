@@ -10,8 +10,8 @@
 | Tue, Apr 1 | Attribution analysis<br>Break-outs<br>Scraping SEC filings |[Attribution slides](day5-attribution.pdf){target="_blank"}| | |
 | Thur, Apr 3 | Financial ratios<br>Streamlit | [Financial ratios slides](day6-ratios.pdf)| | 3. Attribution analysis|
 | Tue, Apr 8 | Capital budgeting| [Capital budgeting slides](day7-capitalbudgeting.pdf)| | Read *The Sneaker Project* before class|
-| Thur, Apr 10 | Review of capital budgeting<br>Break-outs<br>Sensitivity analysis|  | | 4. Financial ratios|
-| Tue, Apr 15 | Valuation| | | | 
+| Thur, Apr 10 | Review of capital budgeting<br>Break-outs<br>OpenAI, Claude, Gemini, and Deepseek |  | | 4. Financial ratios|
+| Tue, Apr 15 | Valuation<br>Using APIs | | | | 
 | Thur, Apr 17 | Review of Valuation<br>Break-outs<br>Option portfolios| | | 5. Capital budgeting|
 | Tue, Apr 22 | Intro to machine learning| | | |
 | Thur, Apr 24 | Applications of machine learning| |  | 6. Valuation|
