@@ -7,13 +7,13 @@
 | Thur, Mar 20 | Review of portfolio optimization<br>Break-outs<br>Simulation and forecasting<br> |[Online data and python report](assets/data.pdf)<br>[Simulation slides](day2-simulation.pdf){target="_blank"}| [Julius](https://julius.ai/s/78de095d-6ede-4a43-bba1-729ef6047689)<br>[recording](https://jgsb.zoom.us/rec/share/1eCOv1EEVkcEdqtiNAjcSRC-wF7Z1DdTrljICZhyWcBe2YTYFwR2TO4jG48xqoiY.HSq1t9jtD1JSxhZt?startTime=1742491401000)| 1. Portfolio optimization<br>[Solution 1](https://julius.ai/s/workflows/751bff8a-2418-485f-af89-df366f3ae4a6)<br>[Solution 2](https://julius.ai/s/workflows/f89554d1-4a4a-4ff6-a4cb-4fa14c235df7)<br>[Streamlit version](https://kerryback-mgmt675-streamlit-portfolio-optimizer-dxx2jh.streamlit.app/)<br>[Streamlit prompt](https://julius.ai/s/dfcfafb1-70a5-461c-81bf-2f84ff5475d1)|
 | Tue, Mar 25 | Retirement planning <br>Break-outs<br>Cost of equity capital | [Retirement planning workbook](assets/RetirementPlanning.xlsx)<br>[Cost of equity slides](day3-costofequity.pdf){target="_blank"}| [recording](https://jgsb.zoom.us/rec/share/g0BLHjdNRkVVofsCgAEXqrSIu-QSg_eGo1tL_PJMamdbl4zWe9dU1lNdGXp9dx9p.n7yfao_cU94A8tTf) | |
 | Thur, Mar 27 | Fama-French model| [Fama-French slides](day4-famafrench.pdf)<br>[Morningstar Quantitative Ratings](assets/Morningstar_Quantitative_Rating_for_Funds.pdf)<br>[Corporate Finance and Reality](assets/JohnGraham.pdf)| [Julius](https://julius.ai/s/9a7948a2-4325-497e-823c-8f22ff3e8524)<br>[recording](https://jgsb.zoom.us/rec/share/1WKo6L6R2ANa9_w_4GyTfYblie47fAJspojQ50QikrmEAqms5hwkvJZzxTYOLaHI.FOXMRCZiUE5plxSI)| 2. Simulation<br>[Streamlit version](https://kerryback-mgmt675-streamlit-retirement-app-8d6evr.streamlit.app/)|
-| Tue, Apr 1 | Attribution analysis<br>Break-outs<br>Scraping SEC filings |[Attribution slides](day5-attribution.pdf){target="_blank"}| | |
+| Tue, Apr 1 | Attribution analysis<br>Break-outs<br>Scraping SEC filings<br>Creating Powerpoint decks |[Attribution slides](day5-attribution.pdf){target="_blank"}| | |
 | Thur, Apr 3 | Financial ratios<br>Streamlit | [Financial ratios slides](day6-ratios.pdf)| | 3. Attribution analysis|
-| Tue, Apr 8 | Capital budgeting| [Capital budgeting slides](day7-capitalbudgeting.pdf)| | Read *The Sneaker Project* before class|
-| Thur, Apr 10 | Break-outs<br>OpenAI, Claude, and Gemini |  | | 4. Financial ratios|
+| Tue, Apr 8 | Capital budgeting<br>Working with Excel files| [Capital budgeting slides](day7-capitalbudgeting.pdf)| | Read *The Sneaker Project* before class|
+| Thur, Apr 10 | Break-outs<br>Data visualization |  | | 4. Financial ratios|
 | Tue, Apr 15 | Valuation<br>Using APIs | | | | 
-| Thur, Apr 17 | Break-outs<br>Option portfolios<br>Effective prompting| | | 5. Capital budgeting|
-| Tue, Apr 22 | Intro to machine learning| | | |
-| Thur, Apr 24 | Applications of machine learning| |  | 6. Valuation|
+| Thur, Apr 17 | Break-outs<br>Option portfolios<br>Scraping data| | | 5. Capital budgeting|
+| Tue, Apr 22 | Intro to machine learning<br>Effective prompting| | | |
+| Thur, Apr 24 | Applications of machine learning<br>Other AI platforms| |  | 6. Valuation|
 
 The assignments are due by 11:59 pm on Thursdays.  Each assignment is a group assignment.  The details are on Canvas.  Upload a link to a Julius workflow for each assignment.
