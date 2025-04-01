@@ -11,7 +11,7 @@
 | Thur, Apr 3 | Financial ratios<br>Streamlit<br>Manus | [Financial ratios slides](day6-ratios.pdf)<br>[Manus chat](https://manus.im/share/S5sD7rzx22NBamzxsh82SY?replay=1)<br>[Manus Word doc]()| | 3. Attribution analysis|
 | Tue, Apr 8 | Capital budgeting<br>Working with Excel files| [Capital budgeting slides](day7-capitalbudgeting.pdf)| | Read *The Sneaker Project* before class|
 | Thur, Apr 10 | Break-outs<br>Data visualization |  | | 4. Financial ratios|
-| Tue, Apr 15 | Valuation<br>Using APIs | | | | 
+| Tue, Apr 15 | Valuation<br>Claude etc.<br>Using APIs | | | | 
 | Thur, Apr 17 | Break-outs<br>Option portfolios<br>Scraping data| | ||
 | Tue, Apr 22 | Machine learning| | |5. Group project |
 | Thur, Apr 24 | Group presentations | |  | |
