@@ -1,0 +1,25 @@
+.reveal pre code {
+    font-size: 1.3em;
+    line-height: 1.2;
+}
+
+.reveal pre {
+    width: 120%;
+    margin-left: -10%;
+}
+
+/*-- scss:defaults --*/
+
+//$body-bg: #ECF0F1 !default; //#C1C6C8 !default;
+// $body-color: #00205B !default;
+//$link-color: #42affa !default;
+$link-color: #ff0066 !default;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;
+$code-block-bg: #000000 !default; //#212121 !default; //#fff !default;
+//$presentation-heading-color: #7c7e7f !default;
+//$presentation-heading-color: #7f7f7c !default;
+//$presentation-heading-color: #7c7e7f;
+$presentation-heading-color: #00205B !default;
+$body-color: #00205B;
+//$body-bg: #ccf5ff !default;
+$body-bg: #e6faff !default;

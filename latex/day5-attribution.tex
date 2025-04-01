@@ -1,0 +1,170 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Attribution of Fund Returns}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Mutual fund styles
+\item Fama-French factors
+\item Other factors
+\item Julius workflow
+\end{itemize}
+\end{frame}
+
+\section{Styles and Factors}
+
+\begin{frame}{How to Evaluate a Mutual Fund?}
+\begin{itemize}
+\item Relative to the market?  Did it beat the market?
+\item \pause Take into account the market exposure of the fund?  
+\begin{itemize}
+\item Example: a high beta fund should beat the market on average
+\end{itemize}
+\item Take into account the style of the fund?
+\begin{itemize}
+\item Is it reasonable to compare a small cap fund to a large cap fund?
+\item Is it reasonable to compare a value fund to a growth fund?
+\end{itemize}
+\item \pause How to determine the fund's style?
+\begin{itemize}
+\item Holdings are reported quarterly, are just a snapshot at a point in time
+\item Can we use returns to infer styles?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Fama-French Regression and Alpha}
+    \begin{align*}
+        r_i - r_f = \alpha_i + \beta_{\text{Mkt-RF}}\text{Mkt-RF} + \beta_{\text{SMB}}\text{SMB} 
+        + \beta_{\text{HML}}\text{HML} \\
+        + \beta_{\text{CMA}}\text{CMA} + \beta_{\text{RMW}}\text{RMW} + \varepsilon_i 
+        \end{align*}
+\begin{itemize}
+\item Coefficients are style exposures
+\item Seeking alpha:
+\begin{itemize}
+\item Fama-French pricing model is:
+$$\overline{r_i} - r_f = \beta_{\text{Mkt-RF}}\overline{\text{Mkt-RF}} + \beta_{\text{SMB}}\overline{\text{SMB}} + \beta_{\text{HML}}\overline{\text{HML}} + \beta_{\text{CMA}}\overline{\text{CMA}} + \beta_{\text{RMW}}\overline{\text{RMW}} $$
+\item Fama-French pricing model is equivalent to: $\alpha_i=0$
+\item $\alpha_i>0$ means outperformance, given style exposures.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other style factors}
+\begin{itemize}
+\item Past returns:
+    \begin{itemize}
+    \item Momentum: return over past 12 months excluding most recent month (high minus low)
+\item Long-term reversal: return over past 5 years excluding most recent year (low minus high)
+\item Short-term reversal: return over previous month (low minus high)
+    \end{itemize}
+\item Volatility and idiosyncratic volatility
+\item Liquidity (volume, spreads)
+\item Betting against beta: return of levered portfolio of low beta stocks minus de-levered portfolio of high beta stocks
+\item Quality (profitability, growth, safety, payouts)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Data sources}
+    \begin{itemize}
+    \item \href{https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html}{French's data library}
+    \item \href{https://www.aqr.com/library/data-sets}{AQR's data library}
+    \end{itemize}
+\end{frame}
+
+\section{Julius Workflow}
+
+\begin{frame}{User prompts}
+    \begin{itemize}
+\item Ask user to provide the ticker of a mutual fund 
+\item Provide a list of available factors and ask the user to select from the list (more than one typically)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Julius prompts}
+\begin{itemize}
+\item Get monthly closing prices for the mutual fund using yfinance 0.2.54 and compute returns as percent changes.
+\item Get RF from French's data library.  Convert to decimal.
+\item Get required factor data from French or AQR.  Convert French data to decimals.
+\item Convert dates to compatible formats and merge the data.
+\item Compute the excess mutual fund return by subtracting RF.
+\item Regress the excess mutual fund return on the factors.  Report a summary of the regression.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Plotting the results}
+\begin{itemize}
+\item Given the estimated betas, compute the factor contribution to the return each month as beta $\times$ factor return.
+\item Compute the active return as the difference between the mutual fund excess return and the sum of the factor contributions.
+\item Compound each factor contribution over time and compound the active return over time.
+\item Plot the compounded active return and each of the compounded factor contributions in a single figure.
+\end{itemize}
+\end{frame}
+\end{document}

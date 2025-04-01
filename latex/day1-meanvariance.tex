@@ -1,0 +1,196 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Mean-Variance Optimization}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+\begin{frame}{Outline}
+\begin{itemize}
+\item Finding the capital allocation line by solving equations
+\item Finding the hyperbola of efficient portolios of only risky assets
+\item Excel example 
+\item Julius workflow
+\end{itemize}
+\end{frame}
+
+
+\section{Solving Equations for Mean-Variance Optimization}
+
+\begin{frame}{Mean-variance optimization}
+\begin{itemize}
+\item The following are essentially equivalent procedures:
+\begin{enumerate}
+\item Maximize Sharpe ratio = risk premium / risk
+\item Maximize expected return subject to not exceeding a risk limit 
+\item Minimize risk subject to achieving a target expected return
+\item Maximize expected return - penalty parameter times variance
+\end{enumerate}
+\item We can run a solver or solve equations to get the solutions.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Calculus review}
+\begin{itemize}
+\item Suppose $y = x^2 - 2x + 5$ and you want to find the value of $x$ that minimizes $y$.
+\item The minimum occurs at the bottom of the curve, where the slope is zero.
+  \begin{itemize}
+  \item The slope is the derivative, and the derivative is $d y/d x = 2x - 2$.
+  \item So, the slope is zero when $2x-2=0$, which implies $x=1$.
+  \end{itemize}
+\item Bottom line: can solve an equation to find the minimum.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Equations that solve mean-variance problems}
+\begin{itemize}
+\item $w_i=$ weight, $\bar r_i=$ expected return, $r_f=$ risk-free rate, $\sigma_i^2=$ variance, $\sigma_{ik} =$ covariance.
+\item 3 asset example: 3 equations in 3 unknowns $w_1, w_2, w_3$
+\end{itemize}
+
+$$\sigma_1^2 w_1 + \sigma_{12} w_2 + \sigma_{13}w_3 = \bar r_1 - r_f$$
+$$\sigma_{12} w_1 + \sigma_x^2 w_2 + \sigma_{13}w_3 = \bar r_2 - r_f$$
+$$\sigma_{12} w_1 + \sigma_{12} w_2 + \sigma_3^2w_3 = \bar r_3 - r_f$$
+\end{frame}
+
+\begin{frame}{Matrix multiplication}
+    This is not essential, but it will help to understand code.
+    \begin{itemize}
+    \item Three equations are represented as 
+    $$\Sigma w = \bar r - r_f$$
+    where $\Sigma = 3 \times 3$ array of covariances and variances, $w=(w_1, w_2, w_3)$ and $\bar r - r_f = (\bar r_1-r_f, \bar r_2 - r_f, \bar r_3 - r_f)$
+    \item Solution is represented as 
+    $$w = \Sigma^{-1}(\bar r - r_f)$$
+    \end{itemize}
+    \end{frame}
+
+\begin{frame}{Tangency and other portfolios}
+\begin{itemize}
+\item Given solution $(w_1, w_2, w_3)$ of the equations, divide by sum of $w_i$ to get tangency portfolio
+\item Given tangency portfolio,
+\begin{itemize}
+    \item Given risk limit (standard deviation), optimal portfolio satisfying the risk limit is
+    $$\frac{\text{risk limit}}{\text{std dev of tangency portfolio}} \times \text{tangency portfolio}.$$
+    \item Given target expected return, optimal portfolio achieving the target is
+    $$\frac{\text{target risk premium}}{\text{risk prem of tangency portfolio}} \times \text{tangency portfolio}$$
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Excel Example}
+
+\begin{frame}{Excel Spreadsheet Example}
+
+Excel Example linked on Schedule page
+
+based on Applied Finance Topic5.1\_SharpeRatioExamples.xlsx
+\end{frame}
+
+\section{Risky Assets Only}
+
+\begin{frame}{Finding the Markowitz Bullet (Hyperbola)}
+\begin{itemize}
+\item We can also solve equations to find
+\begin{itemize}
+\item The global minimum variance portfolio
+\item Another portfolio of risky assets on the hyperbola
+\end{itemize}
+\item And all portfolios on the hyperbola are combinations of those two portfolios.
+\item However, Julius will probably run a solver if you ask it to find a portfolio of risky assets with weights summing to 1 that minimizes variance subject to a target expected return.
+\end{itemize}
+\end{frame}
+
+\section{Julius Workflow}
+
+\begin{frame}{Julius Workflow}
+  \begin{itemize}
+  \item User prompt:
+  \begin{itemize}
+  \item Asset names, expected returns, and covariances
+  \item Risk-free rate
+  \end{itemize}
+  \item Julius prompt:
+  \begin{itemize}
+  \item Compute the tangency portfolio and output to the user
+  \item Compute the expected return and standard deviation of the tangency portfolio and output to the user
+  \end{itemize}
+  \item Optional additional prompt for Julius:
+  \begin{itemize}
+  \item Compute the minimum risk portfolio with weights that sum to 1 (fully invested in risky assets) for various expected return targets.
+  \item  Plot the means and standard deviations of the minimum risk portfolios. 
+  \item Show the tangency portfolio and capital allocation line on the plot.  
+  \item Display the figure and return a jpeg of it.
+  \end{itemize}
+\end{itemize}
+  \end{frame}
+  
+  \begin{frame}{Checking Julius' Work}
+    \begin{itemize}
+    \item Run the workflow with data from Topic5.1\_SharpeRatioExamples.xlsx from Applied Finance (linked on our Schedule page for Day 1).
+    \item Check that the tangency portfolio is correct.
+    \item If it is correct, copy the code generated by Julius and paste it into the Julius prompt cell in the workflow.  Recommend that Julius use the code.
+    \end{itemize}
+  \end{frame}
+\end{document}

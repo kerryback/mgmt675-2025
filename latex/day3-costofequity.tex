@@ -1,0 +1,163 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Cost of Equity Capital}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Overview of cost of equity capital
+\item Data sources
+  \begin{itemize}
+  \item FRED
+  \item Ken French's data library 
+  \item Yahoo Finance
+  \end{itemize}
+\item Regressions
+\end{itemize}
+\end{frame}
+
+\section{CAPM}
+\begin{frame}{Cost of Equity Capital}
+\begin{itemize}
+\item According to the CAPM, the cost of equity capital is
+$$\text{risk-free rate} + \text{beta} \times \text{market risk premium}$$
+\item What to use for the risk-free rate?
+\item How to estimate the market risk premium?
+\item How to estimate beta?
+\end{itemize}
+\end{frame}
+
+\section{Data Sources}
+\begin{frame}{FRED}
+\begin{itemize}
+\item FRED = Federal Reserve Economic Data
+\item \href{https://fred.stlouisfed.org/}{https://fred.stlouisfed.org/}
+\item Easy way to get data is with pandas datareader
+\item Ask Julius to get the current 10-year U.S. Treasury yield from FRED
+\item Ask Julius to get the current 3-month U.S. Treasury yield from FRED
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ken French's data library}
+\begin{itemize}
+\item \href{https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html}{French's website} at Dartmouth (actually DFA)
+\item Easy way to get data is with pandas datareader
+\item Ask Julius to list the data sets available
+\item Ask Julius to get monthly Mkt-RF and RF beginning in 1926
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Yahoo Finance}
+\begin{itemize}
+\item \href{https://finance.yahoo.com/}{https://finance.yahoo.com/}
+\item Yahoo computes split-adjusted prices (like everyone does) and also split and dividend adjusted prices (called adjusted close)
+\item Percent change in adjusted close is capital gain + dividend yield
+\item Easy way to get data is with yfinance
+\end{itemize}
+\end{frame}
+
+\begin{frame}{yfinance version}
+\begin{itemize}
+\item yfinance recently started auto adjusting - when you ask for closing prices, you get the adjusted close by default
+\item Ask Julius to use yfinance 0.2.54 (most recent version)
+\item Ask Julius for closing prices (you'll get the adjusted close)
+\item Compute percent changes to get returns
+\item Example: Ask Julius to use yfinance 0.2.54 to get monthly closing prices for AAPL and to compute returns as percent changes
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Merging data}
+\begin{itemize} 
+\item Date formats
+\begin{itemize}
+\item Ask Julius what the date format is for the Mkt-RF and RF data
+\item Ask Julius what the date format is for the AAPL returns
+\item Ask Julius how to merge the two data sets
+\item Tell Julius to merge them as it recommends
+\end{itemize}
+\item Decimal or percentage?  Ask Julius to convert the AAPL return to percentage or to convert Mkt-RF and RF to decimal.
+\end{itemize}
+\end{frame}
+
+\section{Regression}
+\begin{frame}{CAPM regression}
+  \begin{itemize}
+  \item We want to regress the excess stock return on the excess market return
+  \item Conventional to use most recent 60 months of data
+  \item Ask Julius to compute the AAPL return minus RF 
+  \item Ask Julius to regress the excess AAPL return on Mkt-RF using the most recent 60 months for which both are available
+  \item Ask Julius to show a scatter plot with the regression line
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Julius workflow}
+    \begin{itemize}
+    \item Create a Julius workflow in which the user inputs a ticker and specifies whether she wants to use the 3-month Treasury or 10-year Treasury as the risk-free rate.  
+    \item The workflow should return the cost of equity capital and a scatter plot of the regression.
+    \end{itemize}
+\end{frame}
+\end{document}

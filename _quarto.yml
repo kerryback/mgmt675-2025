@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs
+  render: 
+    - index.qmd
+    - schedule.qmd
+    - videos.qmd
+                  
+website:
+  title: ""
+  search: false  
+  navbar:
+    search: false
+    title: MGMT 675
+    file: index.qmd
+    right:
+      - text: Syllabus
+        file: index.qmd
+      - text: Schedule/Materials 
+        file: schedule.qmd
+      - text: Videos
+        file: videos.qmd
+  
+ 
+format: 
+  html:
+    theme: yeti
+    scss: styles.css
+    link-external-newwindow: true
+    
+   
+
+
+

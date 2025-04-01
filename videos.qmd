@@ -1,0 +1,53 @@
+## Google Colab and Intro to Python
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/video1.mp4?rlkey=yt1ifx6oy9unf7mrim28bqk1u&dl=1 
+>}}
+:::
+
+## Functions and Flow Control
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/ydr3lebsch01pnbnby4fz/video2.mp4?rlkey=s3zwfdps5gselqqs9ysqd061q&dl=1 
+>}}
+:::
+
+## Objects, Attributes, and Methods 
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/ymqnsziwvxs6n0tasg8n2/video3.mp4?rlkey=vko4rclkldxa2zfc6sn3fppu8&dl=1
+>}}
+:::
+
+## Getting Data into and out of Python 
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/video1.mp4?rlkey=yt1ifx6oy9unf7mrim28bqk1u&dl=1
+>}}
+:::
+
+## Data Analysis with Pandas 
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/i0xmuo4dn2js0etdvx6oy/video5.mp4?rlkey=ij95d5c2v5sufhr5owvg0mr52&dl=1
+>}}
+:::
+
+## Local Installation of Python and Jupyter 
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/kvnpjthwl66oh0ak58vip/video6.mp4?rlkey=xeyz5arh6e5ml9dafnnjs6t30&dl=1
+>}}
+:::
+
+## Cursor (coming soon)
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
+>}}
+:::
+
+## Accessing LLM APIs (coming soon)
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
+>}}
+:::
+
+## Streamlit Apps (coming soon)
+::: {.border}
+{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
+>}}
+:::

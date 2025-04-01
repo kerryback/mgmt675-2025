@@ -1,0 +1,235 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Capital Budgeting}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Building a model
+\item Creating a slide deck
+\item Creating a Julius workflow
+\item Sensitivity analysis (next class)
+\end{itemize}
+\end{frame}
+
+\section{Building a Model}
+
+\begin{frame}{Model Elements}
+
+    \begin{itemize}
+        \item Balance sheet
+    \begin{itemize}
+        \item Gross PP\&E
+        \item Accumulated depreciation
+        \item Net PP\&E
+        \item Inventory
+        \item Accounts receivable
+        \item Accounts payable
+    \end{itemize}
+    \item Income statement
+    \begin{itemize}
+        \item Revenue
+        \item Cost of goods sold
+        \item SG\&A expenses
+        \item Sales of PP\&E less book value
+        \item Taxes
+        \item Net income
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{More Model Elements}
+    \begin{itemize}
+    \item Statement of cash flows
+    \begin{itemize}
+        \item Net income
+        \item Add back depreciation
+        \item Add back book value of PP\&E sold
+        \item Subtract capital expenditures
+        \item Subtract change in net working capital
+    \end{itemize}
+    \item Valuation   
+    \begin{itemize}
+        \item Cash flows
+        \item Discount rate
+    \end{itemize}
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{General Points}
+    \begin{itemize}
+    \item Let's use 0, 1, 2, \ldots as the years
+    \item Cap ex occurs at date 0 but can also occur at other dates
+    \item All balance sheet items should be zero at the end of the project
+    \begin{itemize}
+        \item Use up inventory, collect recivables, pay payables
+        \item Dispose of or sell PP\&E
+        \item Let's don't add an extra year at the end for this.  Instead, assume it occurs at the end of the last year of sales.
+     \end{itemize}
+     \item Add inflation in cash flows and use nominal discount rate
+     \item Do everything on incremental basis
+     \begin{itemize}
+     \item For example, if a new product will cannibalize existing sales, use incremental revenue, COGS, SG\&A, inventory, receivables, and payables.
+     \end{itemize}
+     \item Use tax depreciation schedule (MACRS in U.S. starting in year 1)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Tables}
+    \begin{itemize}
+        \item Julius will want to put variables in columns and years in rows
+        \item This is not best for presentations, but just transpose at the end
+        \item Create separate table (dataframe) for each element (balance sheet, income statement, statement of cash flows, valuation)
+        \item We need to tell Julius to set up the tables, specifying the column names in the order we want to see them in tables and specifying the years as rows (called index).
+        \item We need to tell Julius the formulas for how variables depend on each other.
+        \item We need to tell Julius what inputs to ask the user for.  The user may specify additional formulas (e.g., COGS is 40\% of sales).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Balance Sheet Columns}
+    \begin{itemize}
+        \item Capital expenditures
+        \item Gross PP\&E
+        \item Depreciation
+        \item Accumulated depreciation
+        \item Net PP\&E
+        \item Inventory
+        \item Accounts receivable
+        \item Accounts payable
+        \item Net working capital
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Income Statement Columns}
+    \begin{itemize}
+        \item Sales
+        \item COGS
+        \item SG\&A
+        \item EBITDA
+        \item Depreciation
+        \item EBIT
+        \item Taxes
+        \item Net income
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Statement of Cash Flows Columns}
+    \begin{itemize}
+        \item Net income
+        \item Add back depreciation
+        \item Add back book value of PP\&E sold
+        \item Subtract capital expenditures
+        \item Subtract change in net working capital
+        \item Cash flow
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Valuation Columns}
+    \begin{itemize}
+        \item Cash flow
+        \item PV factor
+        \item PV of cash flow
+        \item NPV
+    \end{itemize}
+\end{frame}
+
+
+\section{Creating a Julius Workflow}
+
+\begin{frame}{Inputs, income statement, and balance sheet}
+    \begin{itemize}
+        \item User prompt: cap ex, depreciation schedules
+        \item Julius prompt: create and display transposed PP\&E table: cap ex, gross PP\&E, depreciation, accumulated depreciation, net PP\&E
+        \item User prompt: sales, COGS, SG\&A, tax rate 
+        \item Julius prompt: create and display transposed income statement
+        \item User prompt: inventory, receivables, inventory 
+        \item Julius prompt: create and display transpose net working capital table: sales, COGS, SG\&A, EBITDA, depreciation, EBIT, taxes, net income
+        \item Notes: users should be able to specify \$ amounts or as percents of other items.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Cash flows and valuation}
+    \begin{itemize}
+        \item User prompt:Are the income statement and balance sheet correct?  If not, what changes need to be made?
+        \item Julius prompt: If user approves income statement and balance sheet, create and display transposed statement of cash flows.
+        \item User prompt: input the cost of capital
+        \item Julius prompt: create and display valuation table
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{PowerPoint (Optional)}
+    \begin{itemize}
+        \item You can tell Julius to transpose each table and export it to a slide in a Powerpoint deck.
+        \item You can tell Julius to display each table in a pretty format: numbers centered under column headers, alternating row shades, different background shades for headers and row names, etc.
+        \item You can also edit the table styles in PowerPoint after Julius finishes.
+    \end{itemize}
+\end{frame}
+
+
+\end{document}

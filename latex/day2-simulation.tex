@@ -1,0 +1,179 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Simulation and Forecasting}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Setting up a simulation in Julius/python
+\item Random walks
+\item Mean reversion
+\item Estimating parameters from historical data
+\item Forecasting the crude oil price
+\item Julius workflow
+\end{itemize}
+\end{frame}
+
+\section{Simulating in Julius}
+
+\begin{frame}{Setting up a simulation in Julius/python}
+\begin{itemize}
+\item Model calculates outputs given inputs
+\item Ask Julius to create a function that calculates outputs given inputs
+\item Ask Julius to run a given number of simulations drawing inputs from given distributions
+\item Ask Julius to describe the distributions of the outputs: histogram, mean, median, standard deviation, 90\% confidence interval, etc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Retirement planning}
+\begin{itemize}
+\item Inputs:
+\item \pause Treat array of investment returns as an input
+\item \pause To simulate, ask Julius to create the array in each simulation as an array of independent random variables drawn from some distribution.
+\end{itemize}
+\end{frame}
+
+\section{Random Walks and Mean Reversion}
+\begin{frame}{Random walks}
+\begin{itemize}
+\item A random walk is a variable for which the \alert{changes} or \alert{percent changes} are independent random variables.
+\item Example
+\begin{itemize}
+\item Model stock returns as independent random variables
+\item Implies stock price is a random walk
+\end{itemize}
+\item Interest rates are very close to random walks.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mean reversion}
+\begin{itemize}
+\item A variable is mean reverting if changes are usually partially reversed by subsequent changes.
+\item "What goes up must come down" 
+\item Interest rates don't get infinitely large.  Positive changes tend to be somewhat reversed by subsequent negative changes.
+\item Commodity prices (crude oil, etc.) tend to be mean reverting.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A simple mean-reverting variable}
+\begin{itemize}
+\item Simple example of mean reverting variable is
+$$x_{t+1} = a + b x_t + \epsilon_{t+1}$$
+where $\epsilon$'s are iid with mean 0.
+\item $E[x_{t+1} \mid x_t] = a + b x_t$.
+\item $E[\Delta x_{t+1} \mid x_t] = a + (b-1) x_t$.
+\item Assume $b<1$.  Then,
+\begin{itemize}
+\item $E[\Delta x_{t+1} \mid x_t] > 0 \;\Leftrightarrow\; x_t < a/(1-b)$.
+\item $E[\Delta x_{t+1} \mid x_t] < 0 \;\Leftrightarrow\; x_t > a/(1-b)$.
+\item $a/(1-b)$ is the long-run mean of $x$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Example}
+
+\begin{frame}{Simulating the Price of Crude Oil}
+\begin{itemize}
+\item Ask Julius to get monthly crude oil prices from FRED for the longest possible history using pandas data reader.
+\item Ask Julius to regress the crude oil price on the lagged price.
+\item Ask Julius to compute intercept / (1 - slope coefficient).
+\item Ask Julius to plot the crude oil prices and include a horizontal line at intercept / (1 - slope coefficient).
+\item Ask Julius to simulate from the model assuming normally distributed residuals and plot the distribution of the crude oil price 24 months from today.
+\item Warning: Julius may talk about AR(1) models and change the notation.
+\end{itemize}
+\end{frame}
+
+\section{Julius Workflow}
+
+\begin{frame}{Retirement planning workflow: User prompt}
+Specify in real terms (today's dollars)
+\begin{itemize}
+\item  current investment account balance, 
+\item number of years before retirement
+\item planned annual savings amounts before retirement, 
+\item expected annual investment return and standard deviation 
+\item number of years of withdrawals after retirement
+\item planned annual withdrawals after retirement
+\item borrowing rate if balance goes negative
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Retirement planning workflow: Julius prompt}
+\begin{itemize}
+\item Simulate returns by year 
+\item Update the investment account balance each year based on the planned deposit or withdrawal and the simulated return (using the borrowing rate instead if the balance is negative)
+\item Repeat 1,000 times
+\item Report the probability that the plan is successful (ending account balance is not negative).
+\item Compute the median (across simulations) account balance each year and plot by year.
+\item Produce a histogram of the ending account balance across simulations 
+\end{itemize}
+\end{frame}
+
+
+\end{document}

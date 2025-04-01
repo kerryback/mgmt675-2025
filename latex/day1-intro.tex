@@ -1,0 +1,225 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\newcommand{\eqdef}{\;\buildrel \text{d{}ef}\over = \;}
+
+\setbeamertemplate{frame footer}{MGMT 675, Rice University}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Course Overview}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Meet your Prof}
+\begin{itemize}
+\item At Rice since 2009, in Jones and in Econ Dept.
+  \begin{itemize}
+  \item teach core finance, quantitative investments, investments theory, and python for business research
+  \item to PhD and Masters in Data Science students
+  \end{itemize}
+\item Previously at Northwestern, Indiana, Washington Univ. in St. Louis, and Texas A\&M. Associate Dean at Wash U.
+\item Former and current editor and associate editor of several journals. Two textbooks (derivatives and PhD asset pricing theory). 
+\item Course materials and info at \href{https://kerryback.com}{kerryback.com}
+\end{itemize}
+\end{frame}
+
+\section{Course Overview}
+
+\begin{frame}{Motivation for this course}
+\begin{itemize}
+\item \href{https://www.cio.com/article/2089550/ai-poised-to-replace-entry-level-positions-at-large-financial-institutions.html}{How will AI affect finance jobs?}
+
+\item Basic template for finance chatbot
+  \begin{itemize}
+  \item Python code for financial analysis
+  \item App that encapsulates python code
+  \item App makes API calls to LLMs to process user's (natural language) input and pass structured version to python code
+  \end{itemize}
+
+\item Random web cites: 40+\% of all new code written by AI, 80+\% of developers use AI assistance
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Learning objectives}
+\begin{itemize}
+\item Learn to use AI to write python code to perform financial analyses
+\item Get additional practice in financial analyses
+\item Obtain a basic understanding of
+  \begin{itemize}
+  \item Python
+  \item Making API calls to LLMs
+  \item Building simple apps
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Platforms}
+\begin{itemize}
+\item Julius.ai to write and execute python code
+\item Google Colab as alternative python environment (free)
+\item VS Code (free) and Cursor as alternative local environments
+\item Streamlit Cloud for hosting apps (free)
+\item OpenAI for API calls
+\item HuggingFace as alternative for API calls (free)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Platforms}
+\begin{itemize}
+\item \alert{Julius.ai to write and execute python code}
+\item Google Colab as alternative python environment (free)
+\item VS Code (free) and Cursor as alternative local environments
+\item Streamlit Cloud for hosting apps (free)
+\item OpenAI for API calls
+\item HuggingFace as alternative for API calls (free)
+\end{itemize}
+\end{frame}
+\begin{frame}{Assignments}
+\begin{itemize}
+\item 6 group assignments, due by midnight on Thursdays beginning this week
+\item Form groups on canvas of no more than six students
+\item We'll break out into groups on most days
+\item Each assignment is to provide a link to a Julius workflow that will accomplish a specific financial analysis
+
+\end{itemize}
+\end{frame}
+
+\section{Julius}
+\begin{frame}{Get a Julius account}
+\begin{itemize}
+\item Julius.ai provides a 50\% academic discount. Sign up for a free account, then send an email using your Rice email account to team@julius.ai and ask for the academic discount. They will respond with a promo code to use.
+\item The Lite account (\$8 per month after discount) allows 250 messages per month and may be ok.
+\item Standard account (\$18 per month after discount) allows unlimited messages.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Warm-Up}
+  Click "+ New" to start a chat (thread)with Julius.  Ask it to do the following (you could start a new chat for each topic):
+\begin{itemize}
+\item Ask Julius to use yfinance 0.2.54 to get AAPL's closing price from Yahoo Finance, plot it, and save as a jpeg.
+\item Ask Julius to use pandas datareader to get the 10-year Treasury yield from FRED, plot it, and save as a jpeg.
+\item Ask Julius to plot the payoff diagram of a call option with a strike of 100.
+\item Ask Julius what data it needs to compute the Black-Scholes value of a call option. Supply the data and ask for the value.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Julius Workflows}
+  \begin{itemize}
+  \item Scroll down the "Workspace" menu to find and select "Workflows." 
+  \item Move to the "Sandbox" tab and select "New Sandbox."
+  \item The "Prompt" menu on the right includes a "User Prompt" option and a "Prompt" (tell Julius to run an analysis) option.
+  \item Each workflow should start with a user prompt, asking the user to supply data and maybe asking the user what output the user wants.
+  \item Specify in a Julius prompt the steps Julius should take with the information provided by the user.  
+  \item Follow up with another user prompt if needed, etc.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Example Workflow}
+  Create a workflow including the following:
+  \begin{itemize}
+  \item User prompt: Ask the user for a ticker and a start date.
+  \item Julius prompt: Use yfinance to get the closing price of the stock from Yahoo Finance beginning at the start date.  Plot the price.  Output the plot to a jpeg file and show it to the user.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Effective Prompting}
+\begin{itemize}
+\item We are writing prompts to Julius that will supplement user input.
+\item Be explicit in what you want.  Break down into steps if possible.
+\item Provide examples to Julius (code that has worked before or spreadsheets).\item Ask Julius to explain each step as it accomplishes it.
+\item Ask Julius to explain what it has done as it accomplishes each step.
+\end{itemize}
+\end{frame}
+
+\section{Excel, Python, and AI}
+
+\begin{frame}{Excel and Python}
+\begin{itemize}
+  \item Python output $\rightarrow$ Excel data is easy
+\item Data in Excel $\rightarrow$ python is easy
+\item Formulas in Excel $\rightarrow$ python is possible via AI (ask Julius to read the formulas not the data).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Building and saving models in python with AI}
+\begin{itemize}
+\item Building:
+\begin{itemize}
+\item Read and mimic Excel model, or
+\item Ask AI to build a model from scratch
+\item Both are often iterative processes.  Need to correct AI mistakes.
+\end{itemize}
+\item Saving:
+\begin{itemize}
+\item Add working code to a Julius workflow: Copy working code and paste it into a "Prompt" cell as an example when creating a workflow.  
+\item Save working code elsewhere:
+\begin{itemize}
+\item Copy and paste into a Jupyter notebook on your hard drive or Google Drive (for Colab).
+\item Create a chatbot app that runs the code.
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}

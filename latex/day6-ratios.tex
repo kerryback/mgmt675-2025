@@ -1,0 +1,330 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Financial Ratios}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Data sources
+\item Key financial ratios
+\item Julius workflow
+\end{itemize}
+\end{frame}
+
+\section{Data Sources}
+
+\begin{frame}{SEC EDGAR}
+\begin{itemize}
+\item All financial statement data ultimately comesfrom the SEC 
+\item SEC EDGAR (Electronic Data Gathering, Analysis, and Retrieval) is the SEC's online database where companies submit  filings and the public can download filings. 
+\item We can search it in a browser
+\item We can do a bulk download
+\item We can scrape it
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Yahoo Finance}
+\begin{itemize}
+\item The easiest way to get financial statement data is to use yfinance.
+\item You'll get a summary of the statements.  Various items are lumped into standard categories.
+\item The SEC provides more granular data.
+\item Example: ask Julius to use yfinance 0.2.54 to get financial statements for Tesla
+\end{itemize}
+\end{frame}
+
+\section{Key Financial Ratios}
+
+\begin{frame}{Categories of Ratios}
+\begin{itemize}
+\item Profitability
+\item Liquidity
+\item Solvency
+\item Efficiency
+\item Valuation
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------
+% Liquidity Ratios
+%----------------------------------------------------------
+\begin{frame}{Liquidity Ratios}
+  \begin{itemize}
+    \item Current Ratio: 
+    \[
+      \frac{\text{Current Assets}}{\text{Current Liabilities}}
+    \]
+
+    \item Quick (Acid-Test) Ratio: 
+    \[
+      \frac{\text{Current Assets} - \text{Inventories}}{\text{Current Liabilities}}
+    \]
+
+    \item Cash Ratio: 
+    \[
+      \frac{\text{Cash \& Cash Equivalents}}{\text{Current Liabilities}}
+    \]
+
+    \item Operating Cash Flow Ratio: 
+    \[
+      \frac{\text{Operating Cash Flow}}{\text{Current Liabilities}}
+    \]
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------
+% Solvency (Leverage) Ratios
+%----------------------------------------------------------
+\begin{frame}{Solvency (Leverage) Ratios}
+  \begin{itemize}
+    \item Debt Ratio: 
+    \[
+      \frac{\text{Total Liabilities}}{\text{Total Assets}}
+    \]
+
+    \item Debt-to-Equity (D/E) Ratio:
+    \[
+      \frac{\text{Total Liabilities}}{\text{Shareholders' Equity}}
+    \]
+
+    \item Interest Coverage Ratio: 
+    \[
+      \frac{\text{EBIT}}{\text{Interest Expense}}
+    \]
+
+    \item Debt Service Coverage Ratio (DSCR): 
+    \[
+      \frac{\text{Operating Income}}{\text{Total Debt Service}}
+    \]
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------
+% Profitability Ratios
+%----------------------------------------------------------
+\begin{frame}{Profitability Ratios}
+  \begin{itemize}
+    \item Gross Profit Margin:
+    \[
+      \frac{\text{Gross Profit}}{\text{Revenue}}
+    \]
+
+    \item Operating Profit Margin:
+    \[
+      \frac{\text{Operating Profit}}{\text{Revenue}}
+    \]
+
+    \item Net Profit Margin:
+    \[
+      \frac{\text{Net Income}}{\text{Revenue}}
+    \]
+
+    \item Return on Assets (ROA):
+    \[
+      \frac{\text{Net Income}}{\text{Total Assets}}
+    \]
+
+    \item Return on Equity (ROE):
+    \[
+      \frac{\text{Net Income}}{\text{Shareholders' Equity}}
+    \]
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------
+% Efficiency (Activity) Ratios
+%----------------------------------------------------------
+\begin{frame}{Efficiency (Activity) Ratios}
+  \begin{itemize}
+    \item Asset Turnover Ratio:
+    \[
+      \frac{\text{Net Sales}}{\text{Average Total Assets}}
+    \]
+
+    \item Inventory Turnover Ratio:
+    \[
+      \frac{\text{Cost of Goods Sold}}{\text{Average Inventory}}
+    \]
+
+    \item Days Inventory Outstanding (DIO):
+    \[
+      365 \div \text{Inventory Turnover}
+    \]
+
+    \item Accounts Receivable Turnover:
+    \[
+      \frac{\text{Net Credit Sales}}{\text{Average Accounts Receivable}}
+    \]
+
+    \item Days Sales Outstanding (DSO):
+    \[
+      \left(\frac{\text{Accounts Receivable}}{\text{Total Credit Sales}}\right)
+      \times 365
+    \]
+  \end{itemize}
+\end{frame}
+\begin{frame}{More Efficiency (Activity) Ratios}
+  \begin{itemize}
+    \item Days Payables Outstanding (DPO):
+    \[
+      \left(\frac{\text{Accounts Payable}}{\text{Cost of Goods Sold}}\right)
+      \times 365
+    \]
+
+    \item Cash Conversion Cycle (CCC):
+    \[
+      \text{DSO} + \text{DIO} - \text{DPO}
+    \]
+  \end{itemize}
+\end{frame}
+
+%----------------------------------------------------------
+% Investment & Valuation Ratios
+%----------------------------------------------------------
+\begin{frame}{Investment \& Valuation Ratios}
+  \begin{itemize}
+    \item Price-to-Earnings (P/E) Ratio:
+    \[
+      \frac{\text{Market Share Price}}{\text{Earnings Per Share}}
+    \]
+
+    \item Price-to-Book (P/B) Ratio:
+    \[
+      \frac{\text{Market Price per Share}}{\text{Book Value per Share}}
+    \]
+
+    \item Price-to-Sales (P/S) Ratio:
+    \[
+      \frac{\text{Market Capitalization}}{\text{Annual Sales}}
+    \]
+
+    \item Price-to-Cash Flow (P/CF) Ratio:
+    \[
+      \frac{\text{Market Price per Share}}{\text{Cash Flow per Share}}
+    \]
+
+    \item Enterprise Value to EBITDA (EV/EBITDA):
+    \[
+      \frac{\text{Enterprise Value}}{\text{EBITDA}}
+    \]
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{More Investment \& Valuation Ratios}
+  \begin{itemize}
+    \item PEG Ratio:
+    \[
+      \frac{\text{P/E}}{\text{Annual EPS Growth Rate}}
+    \]
+
+    \item Dividend Yield:
+    \[
+      \frac{\text{Annual Dividends per Share}}{\text{Share Price}}
+    \]
+
+    \item Dividend Payout Ratio:
+    \[
+      \frac{\text{Annual Dividends per Share}}{\text{Earnings per Share}}
+    \]
+  \end{itemize}
+\end{frame}
+
+\section{Julius Workflow}
+
+\begin{frame}{Julius Workflow}
+\begin{itemize}
+    \item User prompt: input ticker symbol
+    \item Julius prompt:
+\begin{itemize}
+\item Get several years of statements
+\item Calculate ratios each year (can skip Investment \& Valuation)
+\item Plot ratios over time
+\begin{itemize}
+\item Maybe one figure for each category?
+\item Subplot for each ratio?
+\end{itemize}
+\item Describe the trends in each category
+\item Save as a Word doc?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{More on EDGAR}
+
+\begin{frame}{Scraping EDGAR}
+\begin{itemize}
+\item We can retrieve all of the filings of a company by 
+\begin{itemize}
+\item Find the company's CIK (web search)
+\item Add zeros to the beginning of the CIK until it is 10 digits
+\item Paste the 10-digit CIK into https://data.sec.gov/api/xbrl/companyfacts/CIK\{cik\_goes\_here\}.json without the braces and visit the URL
+\end{itemize}
+\item Ask Julius to do this.  We will want the us-gaap data.  Filter to 10Ks or 10Qs or by year and create a dataframe from the data.
+\end{itemize}
+\end{frame}
+
+
+\end{document}

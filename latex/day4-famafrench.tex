@@ -1,0 +1,159 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Fama-French Model}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Does the CAPM work?
+\item Fama-French 3-factor model
+\item Fama-French 5-factor model
+\item Momentum factor
+\item Cost of equity capital with Fama-French model
+\end{itemize}
+\end{frame}
+
+\section{CAPM}
+
+\begin{frame}{Does the CAPM work?}
+\begin{itemize}
+    \item \href{https://learn-investments.rice-business.org}{learn-investments.rice-business.org} pulls from French's data library (and other things)
+    \item \href{https://learn-investments.rice-business.org/capm/sml-industries}{Industry betas do not match average returns}
+    \item \href{https://learn-investments.rice-business.org/capm/two-way-capm}{Size and book-to-market sorted portfolios}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{What could be wrong?}
+\begin{itemize}
+\item CAPM regression for stock $i$:
+$$r_i - r_f = \alpha_i + \beta_i (r_m - r_f) + \varepsilon_i$$
+\item Are $\varepsilon_i$ truly idiosyncratic (firm-specific)? 
+\item \pause Suppose the market is flat and Chevron is up 2\%.  What would you predict for ConocoPhillips?  \item \pause So, maybe there are other systematic risks for which stocks should earn risk premia based on their exposures.  But what risks?
+
+\end{itemize}
+\end{frame}
+
+\section{Fama-French-Carhart Factors}
+
+\begin{frame}{Fama-French 3-factor model}
+\begin{itemize}
+\item  Fama-French (1993) said we don't know, but we do know that small stocks beat big stocks on average and high book-to-market (value) stocks beat low book-to-market (growth) stocks on average.
+\item Maybe because they have different exposures to important risks.  So if small beats big then the risk must have turned out one way and if big beats small it turned out the other.
+\item \pause Use the small minus big (SMB) and high-minus-low (HML) returns as proxies for the unknown risk factors.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other factors}
+    \begin{itemize}
+    \item Fama-French (2015): slow-growing companies beat fast-growing companies (growth in terms of assets) and profitable companies beat unprofitable companies (ROE or similar).
+    \begin{itemize}
+    \item CMA = conservative minus aggressive (slow-growing minus fast-growing)
+    \item RMW = robust minus weak (profitable minus unprofitable)
+    \end{itemize}
+   \item Carhart (1997): momentum factor (past winners minus past losers) called UMD or MOM
+   \begin{itemize}
+   \item \href{https://learn-investments.rice-business.org/factor-investing/quintiles}{Evidence on momentum returns}
+   \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Cost of Equity Capital}
+\begin{frame}{Cost of Equity with Fama-French 5-factor model}
+    \begin{itemize}
+    \item Let's not use momentum and stick with the Fama-French 5-factor model.
+    \item Steps:
+    \begin{itemize}
+    \item Estimate the factor risk premia - 
+    \begin{itemize}
+    \item get longest possible data history on monthly factor returns and compute means.
+    \end{itemize}
+    \item Estimate the factor exposures over ten-year window: 
+    \begin{itemize}
+    \item Get monthly stock prices from yfinance 0.2.54 and compute returns
+    \item Fix date formats and decimal/percentage and merge with factor returns
+    \item Filter to last ten years for which everything is available
+    \item Run multivariate regression of stock return on factors
+    \end{itemize}
+    \item Get the 3-month or 10-year Treasury yield 
+    \item Compute
+    $$r_f + \beta_{\text{Mkt-RF}}\overline{\text{Mkt-RF}} + \beta_{\text{SMB}}\overline{\text{SMB}} + \beta_{\text{HML}}\overline{\text{HML}} + \beta_{\text{CMA}}\overline{\text{CMA}} + \beta_{\text{RMW}}\overline{\text{RMW}} $$
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Is the Fama-French model used?}
+\begin{itemize}
+\item Morningstar uses it to validate its quantitative ratings
+\item Institutional investors use it to evaluate fund managers (next class)
+\item But firms predominantly use the CAPM (see Corporate Finance and Reality)
+\end{itemize}
+\end{frame}
+
+
+\end{document}
