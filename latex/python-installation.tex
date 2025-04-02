@@ -1,0 +1,139 @@
+\documentclass[10pt]{beamer}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Installing Python Locally}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+\begin{itemize}
+\item Install python
+\item Install packages including jupyterlab
+\item Test installation
+\item Run Streamlit app
+\item Use JupyterLab
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Install Python}
+\begin{itemize}
+    \item Download installer from python.org
+    \item Caution: When running installer, check "Add Python to PATH" \alert{on very first screen}.
+    \item Run installer, accepting other defaults.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Install Packages}
+\begin{itemize}
+    \item Open Command Prompt app (Terminal on Mac)
+    \item Pip install libraries.  Can install libraries one at a time or in a batch by typing in Command Prompt and hitting enter.
+    \item Example: 
+    \begin{itemize}
+        \item \texttt{pip install pandas numpy matplotlib yfinance==0.2.54}
+        \item \texttt{pip install streamlit==1.44.0 seaborn jupyterlab}
+        \item \texttt{pip install scipy statsmodels python-pptx lxml}
+        \item \texttt{pip install openpyxl pandas-datareader}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Test Installation}
+\begin{itemize}
+    \item On Windows, in Windows Explorer (file/directory app), select "This PC $>$ Local Disk (C:) $>$ Users $>$ Your username"
+    \item Click New - Directory and name it mgmt675 
+    \item Download test.py from the course website to the mgmt675 directory
+    \item In Command Prompt, execute 
+  
+    \texttt{cd "C:\textbackslash Users\textbackslash Your username\textbackslash mgmt675" }
+
+    \item In Command Prompt, execute 
+   
+    \texttt{python test.py}
+
+  On Mac, use \texttt{python3 test.py}
+    \item You should see "Ready to Go!"  If you get a "no module named ..." error, use pip install to install the missing module.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Run Streamlit App}
+\begin{itemize}
+    \item Download "Streamlit zipfile" from course website.  Extract all files to the mgmt675 directory.
+    \item Navigate using cd to the mgmt675 directory in Command Prompt if you are not already there.
+    \item In Command Prompt, execute "streamlit run app.py."
+    \item The app should open in a tab in your default browser.
+    \item When you enter a ticker, the PowerPoint deck should be downloaded to the mgmt675 directory.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Use JupyterLab}
+    \begin{itemize}
+    \item Open Command Prompt and use cd to navigate to the mgmt675 directory if you are not already there.
+    \item In Command Prompt, execute "jupyter lab"
+    \item The JupyterLab app should open in a tab in your default browser.
+    \item Test with, for example, \texttt{import numpy as np} and \texttt{np.sqrt(9)} on two separate lines.
+    \end{itemize}
+\end{frame}
+
+\end{document}
