@@ -1,0 +1,115 @@
+\documentclass[10pt]{beamer}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+\title{Google Colab}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{DownloadTesla Form 4 notebook}
+    \begin{itemize}
+        \item Install Google Drive \href{https://support.google.com/a/users/answer/13022292?hl=en}{here} if you don't have it already.      
+        \item Download the Tesla Form 4 notebook from the course websiteto the MyDrive folder in Google Drive.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Google Colab}
+    \begin{itemize}
+        \item Go to \href{https://colab.research.google.com}{https://colab.research.google.com}.
+        \item You should see a Welcome screen with an Open Notebook popup.
+        \item Click on New Notebook.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Notebooks}
+    \begin{itemize}
+        \item A Jupyter notebook consists of code cells and text (markdown) cells.
+        \item Code cells can be executed.
+        \item Text cells can be edited as markdown.
+        \item You get free access to Gemini to help you write code.
+        \item You can add new cells by clicking the + button in the toolbar or the popup below a cell.
+        \item The play button will execute the code in the selected cell.
+        \item Type 
+        
+        \texttt{import numpy as np}
+
+        \texttt{np.sqrt(9)}
+
+        and run the cell to see the result.
+        \item Watch the video linked on the course website or one of many youtube videos for a quick introduction.
+        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Run Tesla Form 4 notebook}
+    \begin{itemize}
+        \item In Colab, click on File - Open notebook.
+        \item In the left sidebar, click on Google Drive.
+        \item Click on the Tesla Form 4 notebook to open it.
+        \item  Click Runtime - Run all to run the entire notebook.
+    \end{itemize}
+\end{frame}
+
+\end{document}
