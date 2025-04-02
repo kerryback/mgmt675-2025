@@ -1,0 +1,9 @@
+streamlit>=1.44.1
+pandas_datareader
+yfinance==0.2.54
+pandas
+numpy
+matplotlib
+scipy
+python-pptx
+lxml
