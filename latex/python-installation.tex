@@ -70,9 +70,9 @@
 \begin{frame}{Outline}
 \begin{itemize}
 \item Install python
-\item Install packages including jupyterlab
+\item Install packages
 \item Test installation
-\item Run Streamlit app
+\item Download and run Streamlit app
 \item Use JupyterLab
 \end{itemize}
 \end{frame}
@@ -80,7 +80,7 @@
 \begin{frame}{Install Python}
 \begin{itemize}
     \item Download installer from python.org
-    \item Caution: When running installer, check "Add Python to PATH" \alert{on very first screen}.
+    \item \alert{Caution:} When running installer, check "Add Python to PATH" \alert{on very first screen}.
     \item Run installer, accepting other defaults.
 \end{itemize}
 \end{frame}
@@ -92,7 +92,7 @@
     \item Example: 
     \begin{itemize}
         \item \texttt{pip install pandas numpy matplotlib yfinance==0.2.54}
-        \item \texttt{pip install streamlit==1.44.0 seaborn jupyterlab}
+        \item \texttt{pip install streamlit==1.44.1 seaborn jupyterlab}
         \item \texttt{pip install scipy statsmodels python-pptx lxml}
         \item \texttt{pip install openpyxl pandas-datareader}
     \end{itemize}
@@ -123,7 +123,8 @@
     \item Navigate using cd to the mgmt675 directory in Command Prompt if you are not already there.
     \item In Command Prompt, execute "streamlit run app.py."
     \item The app should open in a tab in your default browser.
-    \item When you enter a ticker, the PowerPoint deck should be downloaded to the mgmt675 directory.
+    \item When you enter a ticker, you should see the cost of equity calculation, a scatter plot, and a Download button for the PowerPoint deck.
+    \item If you want to execute another command in Command Prompt, use CTRL-C to stop the streamlit app.
 \end{itemize}
 \end{frame}
 
