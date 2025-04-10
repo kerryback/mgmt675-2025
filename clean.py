@@ -6,6 +6,7 @@ docs_dir = 'docs'
 
 # Get list of files in latex directory
 files = os.listdir(latex_dir)
+files = [f for f in files if os.path.isfile(os.path.join(latex_dir, f))]
 
 # Delete files that aren't .tex or .pdf
 for file in files:
