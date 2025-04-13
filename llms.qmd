@@ -1,0 +1,152 @@
+title: "How Large Language Models Work"
+author: "Lecture for Business Students"
+format:
+revealjs:
+theme: default
+slide-number: true
+incremental: true
+chalkboard: true
+transition: fade
+center: true
+
+Introduction
+
+The Magic Behind ChatGPT
+
+What is ChatGPT?
+
+How does it work?
+
+Goals for this lecture
+
+Vector Embeddings
+
+Turning Words Into Numbers
+
+Words → vectors in high-dimensional space
+
+Similar words are close together
+
+Enables math-based language understanding
+
+Visualizing Embeddings
+
+
+
+Semantic clusters (e.g., animals vs vehicles)
+
+Vectors encode meaning and context
+
+Embedding Magic: Analogies
+
+King - Man + Woman ≈ Queen
+
+Embeddings support arithmetic reasoning
+
+Context-aware similarity detection
+
+Probabilistic Text Generation
+
+How LLMs Pick the Next Word
+
+Predict next word using probabilities
+
+Based on training data and context
+
+Sample or select highest-probability word
+
+Example: "The cat sat on the ..."
+
+
+
+Top options: mat, floor, couch
+
+Generated word depends on probability distribution
+
+Transformer Architecture
+
+The Model Behind ChatGPT
+
+Introduced in 2017
+
+Replaces older models like RNNs
+
+Uses self-attention to understand context
+
+Self-Attention: How It Works
+
+Every word looks at all others
+
+Learns what to focus on
+
+Understands long-range dependencies
+
+Self-Attention Example
+
+
+
+"It moved to the branch..." → It = the cat
+
+Model learns to track meaning across sentences
+
+Multi-Head Attention
+
+Multiple attention heads = multiple perspectives
+
+One might follow grammar, another meaning
+
+Heads combine for rich understanding
+
+Transformer Layers
+
+Stacks of attention + feedforward blocks
+
+Build understanding through depth
+
+No recurrence, fully parallel
+
+"Attention Is All You Need"
+
+The Breakthrough Paper
+
+2017 Google Research
+
+Transformer model introduced
+
+Outperformed prior models in translation
+
+Key Ideas From the Paper
+
+Attention-only architecture
+
+Faster, more accurate
+
+Enabled large-scale training
+
+Impact on Modern AI
+
+Foundation for GPT, BERT, PaLM, LLaMA
+
+Millions of citations
+
+Sparked AI language revolution
+
+Conclusion
+
+Tying It All Together
+
+Embeddings = numeric meaning
+
+Probabilities = generate coherent text
+
+Transformers = capture complex context
+
+Attention = focus on what matters
+
+Takeaways for Business Students
+
+LLMs are built on simple but powerful ideas
+
+Understanding them helps with AI literacy
+
+Opens doors to automation, analysis, communication

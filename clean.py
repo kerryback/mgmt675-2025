@@ -10,7 +10,7 @@ files = [f for f in files if os.path.isfile(os.path.join(latex_dir, f))]
 
 # Delete files that aren't .tex or .pdf
 for file in files:
-    if not file.endswith(('.tex', '.pdf')):
+    if not file.endswith(('.tex', '.pdf', '.qmd')):
         os.remove(os.path.join(latex_dir, file))
 
 # Copy PDF files to docs directory

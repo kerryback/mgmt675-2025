@@ -11,7 +11,7 @@
 | Thur, Apr 3 | Google Colab<br>Installing python <br>Streamlit<br>Manus<br>Financial ratios |[Google Colab](colab.pdf)<br>[Tesla Form 4 notebook](assets/TSLA_form4.ipynb)<br> [Installing python](python-installation.pdf)<br>[test.py](assets/test.py)<br>[Julius Streamlit thread](https://julius.ai/s/9ac52a0d-669c-47b0-a4f0-40d370e3ad35)<br>[Streamlit zipfile](assets/cost_of_equity_app.zip)<br>[Manus chat](https://manus.im/share/S5sD7rzx22NBamzxsh82SY?replay=1)<br>[Manus Word doc](assets/AAPL_MSFT_Correlation_Analysis_Report.docx)<br>[Financial ratios slides](day6-ratios.pdf)| | 3. Attribution analysis|
 | Tue, Apr 8 | Capital budgeting| [Capital budgeting slides](day7-capitalbudgeting.pdf)| | Read *The Sneaker Project* before class|
 | Thur, Apr 10 | Break-outs<br>Data visualization | [Sneaker solution](assets/Sneaker.xlsx)<br>[AI University](assets/AI_University.pdf)<br>[Visualization slides](day8-visualization.pdf)<br>[financials.xlsx](assets/financials.xlsx) | | |
-| Tue, Apr 15 | API calls <br>Survey of current LLM tools | | | 4. Financial ratios<br>Read *Adoption of LLM at Deloitte Canada* before class| 
+| Tue, Apr 15 | What are LLMs? <br>API calls <br>Survey of current LLM tools | | | 4. Financial ratios<br>Read *Adoption of LLM at Deloitte Canada* before class| 
 | Thur, Apr 17 | Break-outs<br>Scraping data from SEC Edgar and elsewhere| | ||
 | Tue, Apr 22 | Pro forma valuation| | |5. Group project <br>Read *Valuing Wal-Mart* before class |
 | Thur, Apr 24 | Group presentations | |  | |
