@@ -3,16 +3,12 @@ import requests
 from bs4 import BeautifulSoup
 import openai
 from datetime import datetime
-from dotenv import load_dotenv
 import os
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Set page title and configuration
 st.set_page_config(page_title="News Sentiment Analyzer", layout="wide")
 # Get OpenAI API key from environment variables
-openai_api_key = os.getenv('OPENAI_API_KEY')
+openai_api_key = st.secrets['OPENAI_API_KEY']
 if not openai_api_key:
     st.error("OpenAI API key not found in environment variables. Please check your .env file contains OPENAI_API_KEY=your-key-here")
     st.stop()
