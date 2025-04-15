@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{API Calls}{2}{0}{1}
-\beamer@sectionintoc {2}{Some Chatbots}{7}{0}{2}
-\beamer@sectionintoc {3}{Language Models}{9}{0}{3}
-\beamer@sectionintoc {4}{Neural Networks (Prediction Model)}{14}{0}{4}
