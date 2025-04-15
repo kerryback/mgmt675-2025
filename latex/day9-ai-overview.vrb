@@ -1,0 +1,16 @@
+\frametitle{Python code for API call}
+\begin{lstlisting}[language=Python]
+import openai
+# [input openai_api_key]
+client = openai.OpenAI(api_key=openai_api_key)
+prompt = "Here are today's headlines"
+# [then include the scraped headlines]
+prompt += "Based on these headlines, ..."
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant that analyzes news headlines."},
+        {"role": "user", "content": prompt}
+    ]
+)
+    \end{lstlisting}

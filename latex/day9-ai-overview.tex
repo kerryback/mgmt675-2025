@@ -112,9 +112,14 @@
 \begin{frame}{Examples}
     \begin{itemize}
         \item Julius prompt: build a Streamlit app that scrapes the headlines from \textit{The Guardian} website, sends them to ChatGPT 4o using my API key, and returns a summary of the headlines and an assessment of the sentiment of the headlines.
+      \begin{itemize}
         \item After deployment: \href{https://mgmt675-app-kbhft94zmjfhfjqbdq9csf.streamlit.app/}{Streamlit app with API call built by Julius}
+        \end{itemize}
         \item Replit prompt: same as Julius prompt + provide a chat interface that allows the user to ask further questions about the headlines.
+        \begin{itemize}
         \item Deployed directly from Replit: \href{https://guardian-pulse-kerryback.replit.app/}{Replit app with API call}
+        \end{itemize}
+        \item Build apps with \href{https://zapier.com/blog/categories/zapier-automation/}{Zapier}
     \end{itemize}
     \end{frame}
 
@@ -159,13 +164,16 @@ response = client.chat.completions.create(
         \hline
         \end{tabular}
         \end{table}
+
+        
         \end{frame}
 
 \section{Some Chatbots}
 
 \begin{frame}{Chatbots}
     \begin{itemize}
-     \item ChatGPT, Gemini, Claude (try ChatGPT Deep Research)
+     \item ChatGPT, Gemini, Claude, Perplexity (try ChatGPT Deep Research)
+     \item \href{https://openai.com/index/introducing-gpts/}{Custom GPTs}
     \item \href{https://notebooklm.google/}{Google NotebookLM}
     \begin{itemize}
         \item Notebook = collection of sources (text, images, etc.)
