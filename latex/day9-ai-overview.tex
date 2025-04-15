@@ -302,6 +302,35 @@ response = client.chat.completions.create(
             &= -0.5 + 6.05 + 0 + 0 = \boxed{5.55}
     \end{align*}
     \end{frame}
-    
+
+    \section{Retrieval Augmented Generation}
+
+    \begin{frame}{Why RAG?}
+        \begin{itemize}
+        \item What happens when you upload a document to a chatbot and ask a question about it?
+        \item The text from the document is added to the question and the entire thing is sent to an LLM.  For long or many documents,
+        \begin{itemize}
+        \item Could be too long for the context window.
+        \item Will be expensive.
+        \end{itemize}
+    \item How to send only the most relevant parts of the document to the LLM?
+    \item Enter RAG
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{Vector Stores and Similarity Search}
+    \begin{itemize}
+    \item Before anyone asks any questions, create a vector store:
+    \begin{itemize}
+    \item 
+   Break entire/all documents into text chunks (think of paragraphs).
+    \item Compute the vector embedding of each chunk (average of vectors of tokens in chunk).
+    \item Store the data: chunks and associated vectors.
+    \end{itemize}
+\item When someone asks a question, compute the vector embedding of the question.
+\item Find the vectors in the vector store that are most similar to the question's vector.
+\item Send the associated chunks of text plus the question to the LLM.
+\end{itemize}
+\end{frame}
 \end{document}
 
