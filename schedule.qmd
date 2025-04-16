@@ -12,7 +12,7 @@
 | Tue, Apr 8 | Capital budgeting| [Capital budgeting slides](day7-capitalbudgeting.pdf)| | Read *The Sneaker Project* before class|
 | Thur, Apr 10 | Break-outs<br>Data visualization | [Sneaker solution](assets/Sneaker.xlsx)<br>[AI University](assets/AI_University.pdf)<br>[Visualization slides](day8-visualization.pdf)<br>[financials.xlsx](assets/financials.xlsx) | | |
 | Tue, Apr 15 | AI overview | [AI in Private Equity](assets/AI_PrivateEquity.pdf)<br>[AI Overview slides](day9-ai-overview.pdf)<br>[Replit app](https://guardian-pulse-kerryback.replit.app/)<br>[Streamlit app](https://mgmt675-app-kbhft94zmjfhfjqbdq9csf.streamlit.app/)<br> [Stanford AI Report podcast](https://www.dropbox.com/scl/fi/ui3b7et1mi575b947n11s/Stanford_AI_Report_2025.wav?rlkey=dpfb7i75uk1yhecn668bzwp2w&dl=1)<br>[embeddings.xlsx](assets/embeddings.xlsx)<br>[Stock Returns and LLMs paper](assets/ExpectedReturns_LLMs.pdf) | | 4. Financial ratios<br>Read *Adoption of LLM at Deloitte Canada* before class| 
-| Thur, Apr 17 | Break-outs<br>Quantitative equity investing|[stocks.csv](https://www.dropbox.com/scl/fi/panii3j5ic0ey879gf83j/stocks.csv?rlkey=l9xnkwelfpku8e1qwu88obaju&dl=1) | ||
+| Thur, Apr 17 | Break-outs<br>Quantitative equity investing|[Quant Equity Investing](day10-quant.pdf)<br>[stocks.csv](https://www.dropbox.com/scl/fi/panii3j5ic0ey879gf83j/stocks.csv?rlkey=l9xnkwelfpku8e1qwu88obaju&dl=1) | ||
 | Tue, Apr 22 | Pro forma valuation| | |5. Group project <br>Read *Valuing Wal-Mart* before class |
 | Thur, Apr 24 | Group presentations | |  | |
 

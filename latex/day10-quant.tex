@@ -100,29 +100,44 @@
 \end{frame}
 
 \begin{frame}{Outline}
-    \begin{itemize}
-    \item Motivation: Can we profitably trade on quantitative signals?
+    Motivation: Can we profitably trade on quantitative signals?
+    \vspace{1em}
+    \begin{enumerate}
     \item Example dataset
     \item Returns of portfolios formed by sorting on characteristics
-    \item Regressing returns on characteristics at each date
-    \item Training a model on past data and sorting on its predictions
-    \end{itemize}
+     \item Regressing returns on characteristics at each date
+\item Training a model on past data and sorting on its predictions
+    \end{enumerate}
 \end{frame}
 
-\section{Example Data}[fragile]
-\begin{frame}
+\section{Example Data: stocks.csv}
+
+\begin{frame}[fragile]
 \begin{itemize}
-    \item Weekly data on $\approx$ 1,000 stocks from 2021 to present
+    \item Weekly data on 800 to 1,000 stocks from 2021 to present
     \item Roughly top half of Russell 2000
     \begin{itemize}
     \item Sorted on marketcap on Jan 1, 2021.  Chose stocks from 1,001 through 2,000.  
     \item Followed them to present.  Down to around 800 now due to mergers, etc.
     \end{itemize}
     \item All items are as of the end-of-week market close except \verb!ret!
-    \item \verb!lag1! is the return over the week ending on the date shown
-    \item \verb!lag4! is the return over the prior 4 weeks including the week ending on the date shown, etc.
-    \item \verb!rsi! is the Relative Strength Index 
-\item Download stocks.csv from the Schedule page and upload to Julius.  Ask Julius to describe the data.
+    \item \verb!ret! is the return from close of the date shown through close of the following week
+    \item Original daily data comes from \href{https://www.nasdaq.com/solutions/data/nasdaq-data-link}{Nasdaq Data Link}, specifically \href{https://data.nasdaq.com/databases/SFA}{Sharadar Equity Bundle}
+ \item Download stocks.csv from the Schedule page and upload to Julius.  Ask Julius to describe the data.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Variables}
+\begin{itemize}
+        \item \verb!open!, \verb!high!, \verb!low! are for the week
+        \item \verb!volume! is average daily volume for the week
+        \item \verb!closeunadj! is split but not dividend-adjusted close for the week
+        \item \verb!closeadj! is split and dividend-adjusted close for the week
+        \item \verb!pb!, \verb!pe!, \verb!ps! are price to book, earnings, and sales
+        \item \verb!evebit!, \verb!evebitda! are enterprise value to EBIT and EBITDA
+        \item \verb!lag1! is the return over the week ending on the date shown
+        \item \verb!lag4! is the return over the prior 4 weeks including the week ending on the date shown, etc.
+        \item \verb!rsi! is the \href{https://en.wikipedia.org/wiki/Relative_strength_index}{Relative Strength Index}
 \end{itemize}
 \end{frame}
 \end{document}
