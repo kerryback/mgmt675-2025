@@ -1,0 +1,129 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+
+% Add these packages in the preamble
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Add this styling configuration
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{green!60!black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single
+}
+\lstset{style=mystyle}
+
+
+
+
+\usepackage{verbatim}
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\usepackage{pifont}
+\newcommand{\cmark}{\textcolor{green!70!black}{\ding{51}}} % check mark
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}             % cross mark
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+
+\title{Quantitative Equity Investing}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+    \begin{itemize}
+    \item Motivation: Can we profitably trade on quantitative signals?
+    \item Example dataset
+    \item Returns of portfolios formed by sorting on characteristics
+    \item Regressing returns on characteristics at each date
+    \item Training a model on past data and sorting on its predictions
+    \end{itemize}
+\end{frame}
+
+\section{Example Data}[fragile]
+\begin{frame}
+\begin{itemize}
+    \item Weekly data on $\approx$ 1,000 stocks from 2021 to present
+    \item Roughly top half of Russell 2000
+    \begin{itemize}
+    \item Sorted on marketcap on Jan 1, 2021.  Chose stocks from 1,001 through 2,000.  
+    \item Followed them to present.  Down to around 800 now due to mergers, etc.
+    \end{itemize}
+    \item All items are as of the end-of-week market close except \verb!ret!
+    \item \verb!lag1! is the return over the week ending on the date shown
+    \item \verb!lag4! is the return over the prior 4 weeks including the week ending on the date shown, etc.
+    \item \verb!rsi! is the Relative Strength Index 
+\item Download stocks.csv from the Schedule page and upload to Julius.  Ask Julius to describe the data.
+\end{itemize}
+\end{frame}
+\end{document}
+
