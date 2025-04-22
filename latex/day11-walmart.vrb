@@ -1,0 +1,11 @@
+\frametitle{Question}
+    If you use a multi-layer perceptron and \verb!pb!, \verb!lag52!, \verb!lag4!, and \verb!rsi! as the features, can you use the predictions from a trained model to trade successfully?
+
+    \vspace{1em}
+    Julius may default to a network structure that is too simple, for example, 2 hidden layers with 16 and 4 neurons respectively.  You may want to ask for a more complex network, for example, three hidden layers with 64, 64, and 32 neurons respectively.
+    \vspace{1em}
+
+    \alert{Caution: Others are already using more sophisticated versions of this, so the market should be mostly efficient.  E.g., \href{https://mgmt675-2024.kerryback.com/assets/Gu_Kelly_Xiu_RFS_2020.pdf}{Gu-Kelly-Xiu (2020)}}
+    \vspace{1em}
+
+    \alert{Also, we are ignoring the fact that you buy at the ask and sell at the bid, which causes round-trip transactions to be costly.}

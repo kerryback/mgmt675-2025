@@ -1,0 +1,234 @@
+\documentclass[10pt]{beamer}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+
+% Add these packages in the preamble
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Add this styling configuration
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{gray!10},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{green!60!black},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single
+}
+\lstset{style=mystyle}
+
+
+
+
+\usepackage{verbatim}
+\usetheme[progressbar=foot]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\usepackage{xcolor}
+
+\usepackage{pifont}
+\newcommand{\cmark}{\textcolor{green!70!black}{\ding{51}}} % check mark
+\newcommand{\xmark}{\textcolor{red}{\ding{55}}}             % cross mark
+
+\DeclareMathOperator{\stdev}{stdev}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\corr}{corr}
+\DeclareMathOperator{\prob}{prob}
+\DeclareMathOperator{\n}{n}
+\DeclareMathOperator{\N}{N}
+\DeclareMathOperator{\Cov}{Cov}
+
+\newcommand{\D}{\mathrm{d}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\mye}{\ensuremath{\mathsf{E}}}
+\newcommand{\myreal}{\ensuremath{\mathbb{R}}}
+
+\setbeamertemplate{frame footer}{MGMT 675}
+
+
+\setbeamertemplate{title page}{
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vfill
+    \begin{beamercolorbox}[sep=8pt,center]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    \vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+}
+
+
+\title{Walmart Valuation}
+\subtitle{MGMT 675: AI-Assisted Financial Analysis}
+\titlegraphic{\includegraphics[height=1cm]{../docs/RiceBusiness-transparent-logo-sm.png}}
+\date{}
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \begin{itemize}
+    \item Review of Two/Three Stage Growth Model
+    \item When a Firm Only Earns its Cost of Capital
+    \item Review of Enterprise Valuation
+    \item Walmart Valuation
+  \end{itemize}
+\end{frame}
+
+\section{Two/Three Stage Growth Model}
+
+\begin{frame}{Last Stage}
+    \begin{itemize}
+    \item Assume everything grows at the same rate $g$ from year $T$ onwards.
+    \item Then the value of the firm at $T$ is
+    \[
+        V_T = \frac{D_{T+1}}{k - g}
+    \]
+    where $D_{T+1}$ is the dividend in year $T+1$ and $k$ is the discount rate.
+    \item Define the payout rate $\pi = D_{T+1}/E_{T+1}$, where $E_{T+1}$ is earnings in year $T+1$.
+    \item Then $D_{T+1} = \pi E_{T+1}$.
+    \item Substituting, we get
+    \[
+        V_T = \frac{\pi E_{T+1}}{k - g}
+    \]
+    \end{itemize}
+\end{frame}
+
+    \begin{frame}{Value to Book Ratio}
+        \begin{itemize}
+    \item Define ROE as $\text{ROE} = E_{T+1}/B_T$ where $B_T$ is the book value of the firm at time $T$. Then $E_{T+1} = B_T \times \text{ROE}$.
+    \item Substituting, we get
+    \[
+        V_T = \frac{\pi B_T \times \text{ROE}}{k - g}
+    \]
+    \item So, the value to book ratio is 
+    $$\frac{V_T}{B_T} = \frac{\pi \times \text{ROE}}{k - g}$$
+        \end{itemize}
+      \end{frame}
+
+    \begin{frame}{ROE and Growth}
+      \begin{itemize}
+    \item You probably know the formula $g = (1-\pi) \times \text{ROE}$.
+    \item This can be seen easily by looking at the growth in book equity.
+      \begin{itemize}
+    \item The change in book equity is 
+    $$B_{T+1} - B_T = E_{T+1} - D_{T+1} = (1-\pi)E_{T+1} = (1-\pi)B_T \times \text{ROE}$$
+    \item Therefore, the growth rate is 
+    $$g = \frac{B_{T+1}-B_T}{B_T} = (1-\pi) \times \text{ROE}$$
+      \end{itemize}
+    \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Summary}
+     Substituting for $g$, we get
+     \begin{align*}
+      V_T &= \frac{\pi E_{T+1}}{k - (1-\pi)\times \text{ROE}}\\
+      \frac{V_T}{B_T} &= \frac{\pi \times \text{ROE}}{k - (1-\pi) \times \text{ROE}}
+     \end{align*}
+    \end{frame}
+
+    \section{When a Firm Only Earns its Cost of Capital}
+
+    \begin{frame}{When a Firm Only Earns its Cost of Capital}
+    \begin{itemize}
+    \item Suppose the firm only earns its cost of capital in the last stage, meaning $\text{ROE} = k$.
+    \item Then, 
+   \begin{align*}
+   \frac{V_T}{B_T} &= \frac{\pi  k}{k - (1-\pi)  k} = \frac{\pi  k}{\pi  k} = 1\\
+   V_T &= \frac{\pi E_{T+1}}{k - (1-\pi)  k} = \frac{\pi  E_{T+1}}{\pi  k}= \frac{E_{T+1}}{k}
+  \end{align*}
+  \item Payout rate and growth rate do not matter if a firm is earning exactly its cost of capital (NPV of all growth is zero).
+   \item Also, we have $E_{T+1} = kB_T \Rightarrow B_T = E_{T+1}/k$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Caution about First (or First and Second) Stage}
+    \begin{itemize}
+    \item Case Exhibit 4 makes assumptions about earnings growth and payout rates.
+    \item Earnings + payout rate $\Rightarrow$ book equity growth
+   $$ \Delta \text{Book Equity} = \text{Earnings} - \text{Payouts} $$
+    \item Book equity + earnings $\Rightarrow$ ROE.  Should check if implied ROE assumptions are reasonable.
+    \item Also, assumptions are likely to be inconsistent.
+    \begin{itemize}
+    \item We have $E_{T+1} = \text{ROE} \times B_T = k B_T$.
+    \item So book equity at $T$ must be $E_{T+1}/k$.  This is unlikely to be true, given starting book equity and implied first-stage book equity growth. \href{https://mgmt675-2025.kerryback.comassets/Walmart_Edited.xlsx}{Exhibit 4}.
+    \end{itemize}
+    \item I prefer making assumptions about ROE and payout rates instead of growth and payout rates.  Actually, better to make assumptions about the determinants of ROE.  Actually, better to do enterprise valuation.
+  \end{itemize}
+\end{frame}
+
+\section{Enterprise Valuation}
+
+\begin{frame}{Enterprise Valuation: Definitions}
+    \begin{itemize}
+        \item \alert{Invested Capital}  $=$ Operating Assets minus Operating Liabilities (more later)
+        \item \alert{Net Operating Profit After Taxes} Don't deduct interest in income statement.  Net income replaced by NOPAT (sometimes called NOPLAT or EBIAT)
+        \item \alert{Return on Invested Capital} $\text{ROIC}_{t} = \text{NOPAT}_{t}/\text{Invested Capital}_{t-1}$
+        \item \alert{Plowback rate} $=\Delta \text{Invested Capital}_{t}/\text{\text{NOPAT}}_{t}$
+        \item \alert{Payout rate}  $\pi = 1 - \text{plowback rate}$
+        \item \alert{Free cash flow} $=$ NOPAT $-\Delta$ Invested Capital $= \pi \times \text{NOPAT}$
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{Enterprise Value and Equity Value}
+    \begin{itemize}
+        \item Enterprise Value = present value of free cash flow discounted at WACC
+        \item Equity Value = Enterprise Value - Debt - Minority Interests + Value of Equity in Nonconsolidated Subsidiaries
+    \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Enterprise Valuation: Last Stage}
+        \begin{itemize}
+         \item In perpetual constant growth, the growth rate is 
+         $$g = (1-\pi) \times \text{ROIC}$$
+         \item Enterprise value at $T$ is 
+         $$\frac{\text{FCF}_{T+1}}{\text{WACC} - g}$$
+        \item Earning cost of capital means ROIC $=$ WACC. Then the enterprise value at $T$ is 
+        $$\text{Invested Capital}_T = \frac{\text{NOPAT}_{T+1}}{\text{WACC}}$$
+        \end{itemize}
+\end{frame}
+
+\section{Walmart Valuation}
+
+\begin{frame}{Walmart Valuation}
+    \begin{itemize}
+    \item \href{https://mgmt675-2025.kerryback.comassets/Walmart.xlsx}{Case data}
+    \item \href{https://julius.ai/s/1eb08d2f-4f6e-4d5a-8787-5228da1d22bd}{Julius thread}
+    \item \href{https://mgmt675-2025.kerryback.comassets/Walmart_NOPAT_IC.xlsx}{NOPAT and Invested Capital calculation in Excel}
+    \item \href{https://mgmt675-2025.kerryback.comassets/Walmart_Forecast_Model.xlsx}{Walmart Forecast Model from Julius}
+    \end{itemize}
+\end{frame}
+\end{document}
