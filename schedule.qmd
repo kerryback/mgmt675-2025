@@ -15,6 +15,7 @@
 | Thur, Apr 17 | Break-outs<br>Quantitative equity investing|[Quant equity slides](day10-quant.pdf)<br>[stocks.csv](https://www.dropbox.com/scl/fi/panii3j5ic0ey879gf83j/stocks.csv?rlkey=l9xnkwelfpku8e1qwu88obaju&dl=1)<br>[Gu-Kelly-Xiu paper](assets/Gu_Kelly_Xiu_RFS_2020.pdf) | ||
 | Tue, Apr 22 | Pro forma valuation| [Walmart Valuation slides](day11-walmart.pdf)<br>[Walmart case data](assets/Walmart.xlsx)<br>[Exhibit 4 edited](assets/Walmart_Exhibit_4.xlsx)<br>[Julius thread](https://julius.ai/s/1eb08d2f-4f6e-4d5a-8787-5228da1d22bd)<br>[Walmart NOPAT and Invested Capital](assets/Walmart_NOPAT_IC.xlsx)<br>[Colab neural network notebook](https://colab.research.google.com/drive/1G-b9om0kbLHtqDhYwRclp0cxaDeyBQVf?usp=sharing)| |5. Group project <br>Read *Valuing Wal-Mart* before class |
 | Thur, Apr 24 | Group presentations | |  | |
+| Mon, Apr 28 | | | | Peer assessment |
 
 The assignments are due by 11:59 pm on Thursdays, except for assignments 4 and 5, which are due by 11:59 pm on Tuesday.  Each assignment is a group assignment.  The details are on Canvas.  Upload a link to a Julius workflow for each assignment.
 
