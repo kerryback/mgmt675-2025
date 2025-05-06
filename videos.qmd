@@ -33,21 +33,3 @@
 {{< video https://www.dropbox.com/scl/fi/kvnpjthwl66oh0ak58vip/video6.mp4?rlkey=xeyz5arh6e5ml9dafnnjs6t30&dl=1
 >}}
 :::
-
-## Cursor (coming soon)
-::: {.border}
-{{< video https://www.dropbox.com/scl/fi/kfv8lhtfibn2thsotm1h4/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
->}}
-:::
-
-## Accessing LLM APIs (coming soon)
-::: {.border}
-{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
->}}
-:::
-
-## Streamlit Apps (coming soon)
-::: {.border}
-{{< video https://www.dropbox.com/scl/fi/tffkugxj8pjf5uxo81y77/test.mp4?rlkey=ogjflq7he8kexi139vx2eme9g&dl=1 
->}}
-:::
