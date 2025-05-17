@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Solving Equations for Mean-Variance Optimization}{3}{0}{1}
+\beamer@sectionintoc {2}{Excel Example}{9}{0}{2}
+\beamer@sectionintoc {3}{Risky Assets Only}{11}{0}{3}
+\beamer@sectionintoc {4}{Julius Workflow}{13}{0}{4}
